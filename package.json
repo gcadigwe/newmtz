@@ -1,0 +1,41 @@
+{
+  "name": "multichainz-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.19",
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@fontsource/roboto": "^5.0.3",
+    "@react-spring/parallax": "^9.7.3",
+    "@react-spring/web": "^9.7.3",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.1",
+    "@types/react-dom": "18.2.2",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.4",
+    "ethers": "^6.7.1",
+    "framer-motion": "^10.12.7",
+    "next": "13.3.4",
+    "nextra": "^2.9.0",
+    "nextra-theme-docs": "^2.9.0",
+    "pocketbase": "^0.16.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-fast-marquee": "^1.6.0",
+    "react-icons": "^4.8.0",
+    "react-pie-menu": "^0.3.3",
+    "styled-components": "^6.0.0-rc.1",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/react-pie-menu": "^1.0.0"
+  }
+}

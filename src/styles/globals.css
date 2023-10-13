@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "fira-code";
+  src: url("../fonts/firacode.ttf");
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("../fonts/inter.ttf");
+}
+
+@font-face {
+  font-family: "summer-dreams";
+  src: url("../fonts/summerdreamsans.ttf");
+}
+
+@font-face {
+  font-family: "droidsans";
+  src: url("../fonts/DroidSans.ttf");
+}
+
+@font-face {
+  font-family: "mulish";
+  src: url("../fonts/mulish.ttf");
+}
+
+@font-face {
+  font-family: "clash-display";
+  src: url("../fonts/clashdisplay.ttf");
+}
+
+@font-face {
+  font-family: "grotesk";
+  src: url("../fonts/grotesk.ttf");
+}
+
+@font-face {
+  font-family: "manrope";
+  src: url("../fonts/manrope.ttf");
+}
+
+@font-face {
+  font-family: "grotesklight";
+  src: url("../fonts/grotesklight.ttf");
+}
+
+@font-face {
+  font-family: "groteskmedium";
+  src: url("../fonts/groteskmedium.ttf");
+}
+
+@font-face {
+  font-family: "manropemd";
+  src: url("../fonts/Manrope-Medium.ttf");
+}
+
+@font-face {
+  font-family: "manropebd";
+  src: url("../fonts/Manrope-SemiBold.ttf");
+}

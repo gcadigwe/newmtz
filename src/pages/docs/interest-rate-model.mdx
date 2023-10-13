@@ -1,0 +1,123 @@
+import {
+  FiraBold,
+  FiraText,
+  MultiWeightDiv,
+} from "../../components/Docs/Texts.tsx";
+import { CodeBlock } from "../../components/Docs/CodeBlock.tsx";
+
+<br />
+<br />
+<FiraBold fontSize='18px'  >[Borrow Interest Rate]</FiraBold>
+<br />
+<br />
+<FiraText>
+The interest rate algorithm used by MultichainZ is designed to effectively handle liquidity risk and maximize utilization. The borrowing interest rates are determined based on the Utilization Rate U 
+
+The Utilization Rate serves as a measure of the capital availability within the pool. The interest rate model implemented by MultichainZ effectively manages liquidity risk in the protocol by incentivizing users to support liquidity in the following ways:
+
+   </FiraText>
+   <br />
+
+<FiraText>
+  1. When there is an abundance of capital available, the interest rates are set
+  at a low level to encourage borrowing.
+</FiraText>
+<FiraText>
+  2. Conversely, when there is a scarcity of capital, the interest rates are set
+  at a high level to encourage users to repay their debts and provide additional
+  capital to the pool.
+</FiraText>
+<br />
+<br />
+<FiraBold fontSize='18px'>_Interest Rate Model</FiraBold>
+<br />
+<FiraText>
+  As the utilization rate approaches 100%, the risk associated with liquidity
+  becomes more pronounced and poses a greater challenge. In order to accommodate
+  this constraint, the interest rate curve is divided into two segments centered
+  around an optimal utilization rate U*. Prior to reaching U*, the slope of the
+  curve is relatively gentle, indicating lower interest rates. However, beyond
+  U*, the slope of the curve steepens significantly, resulting in higher
+  interest rates.
+</FiraText>
+<FiraText>The interest rate Rt follows the model:</FiraText>
+<br />
+<CodeBlock>
+  <FiraText>If  U ≤ U* :       Rt  = R0  +  UU* Rslope1</FiraText>
+  <FiraText>If  U > U* :      Rt  = R0  +  U - U * 1- U* Rslope2</FiraText>
+</CodeBlock>
+<br />
+<FiraText>
+  The technical implementation of the borrow rate involves the use of the
+  calculateCompoundedInterest method, which employs an approximation that
+  primarily impacts higher interest rates. As a result, the actual borrow rate
+  is determined as follows:
+</FiraText>
+<br />
+<CodeBlock>
+  <FiraText>
+    ActualAPY = (1 + TheoreticalAPY / secsperyear)secsperyear  — 1
+  </FiraText>
+</CodeBlock>
+<br />
+<CodeBlock>
+
+- <FiraText>
+    When U ≤ U* the borrow interest rates increase slowly with utilisation
+  </FiraText>
+- <FiraText>When  U > U* the borrow interest rates increase sharply with utilisation to above 50% APY if the liquidity is fully utilised.</FiraText>
+</CodeBlock>
+
+<br />
+<FiraText>
+
+Both the variable and stable interest models in MultichainZ are derived from the formula mentioned above, as described in the Whitepaper. However, each model has different parameters for individual assets.
+
+Variable debts have interest rates that continuously change based on utilization.
+
+Alternatively, stable debts maintain their interest rates at the time of issuance until certain rebalancing conditions are satisfied. In MultichainZ, the interest models are optimized by incorporating a new rate strategy parameter known as the Optimal Stable/Total Debt Ratio. This parameter is used algorithmically to manage the stable interest rate.
+
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'  >_Model Parameters</FiraBold>
+<br />
+<FiraText>
+First and foremost, it is essential to differentiate assets that primarily serve as collateral, such as volatile assets, which require constant liquidity to facilitate liquidations. Additionally, the liquidity of an asset on MultichainZ plays a significant role as higher liquidity corresponds to more stable utilization. As a result, assets with lower liquidity levels should have more conservative interest rates.
+
+Moreover, market conditions must be taken into account, specifically how the asset can be utilized in the current market. MultichainZ’s borrowing costs need to align with market yield opportunities; otherwise, there would be a risk of rate arbitrage, where users are motivated to borrow all the available liquidity on MultichainZ to capitalize on higher yield prospects.
+
+In response to the emergence of liquidity mining, MultichainZ has made adjustments to the cost of borrowing by reducing the the optimal utilization rate U\* for the affected assets. As a result, the borrowing costs have increased, but this increase is partially mitigated by the liquidity reward provided to users.
+
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Variable Interest Rate Model Parameters</FiraBold>
+<br />
+<FiraText fontSize='18px'>_Variable rate parameters:</FiraText>
+<br />
+<CodeBlock>
+  - <FiraText>U*</FiraText>
+  - <FiraText>Base Variable Borrow Rate</FiraText>
+  - <FiraText> Variable Rate Slope 1</FiraText>
+  - <FiraText> Variable Rate Slope 2</FiraText>
+
+</CodeBlock>
+<br />
+<br />
+<FiraBold fontSize='18px'  >_Stable Interest Rate Model Parameters</FiraBold>
+<br />
+<FiraText fontSize='18px'  >_Stable rate parameters:</FiraText>
+<br />
+<CodeBlock>
+  - <FiraText>U*</FiraText>
+  - <FiraText>Base Variable Borrow Rate</FiraText>
+  - <FiraText> Variable Rate Slope 1</FiraText>
+  - <FiraText> Variable Rate Slope 2</FiraText>
+  - <FiraText>Stable to Total Debt Ratio</FiraText>
+
+</CodeBlock>
+<br />
+<FiraText>The stable rate offers borrowers predictability, but it is accompanied by higher interest rates compared to the variable rate. With a stable loan, the interest rate remains fixed until the specified rebalancing conditions are fulfilled.</FiraText>

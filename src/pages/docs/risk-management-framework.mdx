@@ -1,0 +1,114 @@
+import {
+  FiraBold,
+  FiraText,
+  MultiWeightDiv,
+} from "../../components/Docs/Texts.tsx";
+import { CodeBlock } from "../../components/Docs/CodeBlock.tsx";
+
+<br />
+<br />
+<FiraBold>[Risk Management Framework]</FiraBold>
+<br />
+
+<FiraText>
+    MultichainZ incorporates advanced risk parameters and features to enhance the protocol's resilience and mitigate the risk of potential insolvency. <br />
+
+Below is the list of risk management additions:
+
+</FiraText>
+
+<br />
+
+<FiraText fontSize='18px'>_1</FiraText>
+<br />
+
+<MultiWeightDiv
+  title='Isolation mode assets'
+  subText='enable the listing of riskier assets in an isolated manner, imposing restrictions that include:'
+/>
+
+<br />
+
+<CodeBlock>
+  - <FiraText>Limiting borrowing exclusively to isolated stablecoins.</FiraText>
+
+- <FiraText>
+    Allowing the use of only a single isolated asset as collateral at any given
+    time.
+  </FiraText>
+</CodeBlock>
+
+<br />
+<FiraText fontSize='18px'>_2</FiraText>
+<br />
+
+<MultiWeightDiv
+  title='Siloed assets'
+  subText='refer to assets that have the potential for manipulatable oracles and are listed solely for supply purposes, meaning they cannot be utilized as collateral.'
+/>
+
+<br />
+
+<br />
+<FiraText fontSize='18px'>_3</FiraText>
+<br />
+
+<MultiWeightDiv
+  title='Isolation mode assets'
+  subText='enable the listing of riskier assets in an isolated manner, imposing restrictions that include:'
+/>
+
+<br />
+
+<br />
+<FiraText fontSize='18px'>_4</FiraText>
+<br />
+
+<MultiWeightDiv
+  title='Permissioned roles'
+  subText='for RISK_ADMIN in MultichainZ Governance allows the protocol to appoint specific entities with the authority to modify risk parameters without requiring a governance vote for each parameter update. This empowers the protocol to efficiently and swiftly adjust risk parameters as the market matures, facilitating more agile risk management.'
+/>
+
+<br />
+
+<br />
+<FiraText fontSize='18px'>_5</FiraText>
+<br />
+
+<FiraText>
+  It is now possible to set upper limits for supply and borrow on each asset
+  reserve by configuring supply and borrow caps (optional). This feature helps
+  reduce exposure to specific assets and mitigates risks such as infinite
+  minting or manipulation of price oracles.
+</FiraText>
+
+<br />
+
+<br />
+<FiraText fontSize='18px'>_6</FiraText>
+<br />
+
+<FiraText>The liquidation mechanism in the protocol has been enhanced with a variable liquidation close factor, allowing for full liquidation of a position as it approaches insolvency (HF < 0.95).</FiraText>
+
+<br />
+
+<br />
+<FiraText fontSize='18px'>_7</FiraText>
+<br />
+
+<MultiWeightDiv
+  title='The Price Oracle sentinel feature'
+  subText='primarily caters to Layer 2 solutions and addresses potential downtime of sequencers. It introduces a grace period for liquidations and grants RISK_ADMINS the ability to disable borrowing for a reserve under specific circumstances.'
+/>
+
+<br />
+
+<div style={{ fontSize: "14px", fontFamily: "fira-code" }}>
+  <p style={{ fontSize: "14px", lineHeight: "10px", fontFamily: "fira-code" }}>
+    The following documentation analyzes the fundamental risks of the protocol
+    and describes the processes in place to mitigate them in more details. If
+    you have any questions, join the[ MultichainZ Telegram Community]("") our
+    team and members of the community look forward to helping you understand
+    MultichainZ’s risks and risk management procedures
+  </p>
+</div>

@@ -1,0 +1,192 @@
+import {
+  FiraBold,
+  FiraText,
+  MultiWeightDiv,
+} from "../../components/Docs/Texts.tsx";
+import { CodeBlock } from "../../components/Docs/CodeBlock.tsx";
+
+<br />
+<br />
+<FiraBold fontSize='18px'>[ASSET RISK PARAMETERS]</FiraBold>
+<br />
+<br />
+
+<FiraText>
+Each asset within the MultichainZ Protocol possesses unique characteristics that determine how they are utilized for supplying and borrowing. 
+
+It is of utmost importance for the MultichainZ community to comprehend the inherent risks associated with each asset. This entails evaluating the security of smart contracts, understanding the risks linked to centralization, and considering market-related risks. When assets are added to the MultichainZ, their associated risks are integrated as well. The protocol utilizes new risk mitigation parameters that enable the inclusion of assets highly exposed to these risk factors, while implementing limits and an isolation mode to ensure appropriate risk management.
+
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Risk Parameters Analysis</FiraBold>
+<br />
+<FiraText>
+The risk parameters implemented by the MultichainZ protocol help mitigate the market risks associated with the supported assets. Each borrowing transaction is backed by over-collateralization using a different asset, which may experience volatility. To ensure the ongoing collateralization of the position, it is crucial to maintain sufficient margin and provide incentives. In the event of unfavourable market conditions causing the value of the collateral to drop below a predetermined threshold, a portion of the collateral is auctioned as a LIQUIDATION_BONUS to repay a portion of the debt and maintain the collateralization of the borrowing.
+
+Market risks are effectively addressed through MultichainZ risk parameters, which establish rules for collateralization and liquidation. These parameters are specifically calibrated for each asset to account for its unique risks.
+
+The MultichainZ protocol utilizes additional risk parameters to provide a higher level of protection against insolvency such as:
+
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Borrow Caps</FiraBold>
+<br />
+<FiraText>
+  Borrow caps establish the upper limit for borrowing a specific asset. These
+  caps serve to prevent both traditional and flash borrowing scenarios, which
+  could potentially exploit the asset's price and jeopardize the overall
+  solvency of the protocol. The implementation of a borrow cap is an optional
+  parameter, and its value is determined based on the on-chain liquidity of the
+  asset and the total volume of assets borrowed within the pool.
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Supply Caps</FiraBold>
+<br />
+<FiraText>
+  Supply caps establish the upper limit for the amount of a specific asset that
+  can be provided to the protocol. These caps are implemented to restrict the
+  protocol's exposure to riskier assets and safeguard against potential exploits
+  related to infinite minting. The inclusion of a supply cap is an optional
+  parameter, and its value is determined based on the on-chain liquidity of the
+  asset and the total volume of collateral assets present in the pool.
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Isolation Mode Caps</FiraBold>
+<br />
+<FiraText>
+  Isolation mode can be used to limit the systemic risk of listing riskier
+  assets. Isolation mode limits an asset to only borrow isolated stablecoins and
+  only use a single isolated asset as collateral at a time
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_eMode</FiraBold>
+<br />
+<FiraText>
+Efficient Mode (”eMode”) allows assets which are correlated in price (e.g., DAI, USDC, and USDT) to be listed in the same eMode category which maximises capital efficiency by allowing higher LTVs when both the borrowed and collateral asset belong to the same eMode category. Currently, only a single eMode category is defined in the MultichainZ protocol markets - Stablecoins, category 1. the protocol allows RISK_ADMINS and POOL_ADMIN, selected by Aave Governance, to configure up to 255 eMode categories, with each EModeCategory having the following risk management parameters:
+
+</FiraText>
+<br />
+<CodeBlock>
+- <FiraText>LTV (loan to value)</FiraText>
+- <FiraText>Liquidation Threshold</FiraText>
+- <FiraText>Liquidation Bonus</FiraText>
+- <FiraText>Custom price oracle (optional)</FiraText>
+</CodeBlock>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Loan to Value</FiraBold>
+<br />
+<FiraText>
+  The Loan to Value (”LTV”) ratio defines the maximum amount of assets that can
+  be borrowed with a specific collateral. It is expressed as a percentage (e.g.,
+  at LTV=75%, for every 1 ETH worth of collateral, borrowers will be able to
+  borrow 0.75 ETH worth of the corresponding currency). Once a borrow occurs,
+  the LTV evolves with market conditions.
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Liquidation Threshold</FiraBold>
+<br />
+<FiraText>
+  The liquidation threshold is the percentage at which a position is defined as
+  undercollateralised. For example, a Liquidation threshold of 80% means that if
+  the value rises above 80% of the collateral, the position is
+  undercollateralised and could be liquidated. <br /> The delta between the LTV
+  and the Liquidation Threshold is a safety mechanism in place for borrowers
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Liquidation Penalty</FiraBold>
+<br />
+<FiraText>
+  The liquidation penalty is a fee rendered on the price of assets of the
+  collateral when liquidators purchase it as part of the liquidation of a loan
+  that has passed the liquidation threshold.
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Liquidation Factor</FiraBold>
+<br />
+<FiraText>
+  The liquidation factor directs a share of the liquidation penalty to a
+  collector contract from the ecosystem treasury.
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Reserve Factor</FiraBold>
+<br />
+<FiraText>
+  The reserve factor allocates a share of the protocol’s interests to a
+  collector contract from the ecosystem treasury. <br /> MultichainZ’s solvency
+  risk is covered by the Safety Module, with incentives originating from the
+  ecosystem reserve. As such, the Reserve Factor is a risk premium calibrated
+  based on the overall risk of the asset. Stablecoins are the least risky assets
+  with a lower reserve factor while volatile assets hold more risk and have a
+  higher factor.
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_From Risks to Risk Parameters</FiraBold>
+<br />
+<FiraText>
+  Market risks have the most direct impact on the risk parameters:
+</FiraText>
+
+<br />
+<br />
+<FiraText fontSize='18px'>_Liquidity</FiraText>
+<br />
+<FiraText>
+  Liquidity based on on-chain liquidity and trading volume, is key for the
+  liquidation process. These can be mitigated through the caps and liquidation
+  parameters (i.e., the lower the liquidity, the higher the incentives).
+</FiraText>
+
+<br />
+<br />
+<FiraText fontSize='18px'>_Volatility</FiraText>
+<br />
+<FiraText>
+Price volatility can negatively affect the collateral which must cover liabilities and safeguards the solvency of the protocol. The risk of the collateral falling below the borrowed amounts can be mitigated through the level of coverage required through the LTV. It also affects the liquidation process as the margin for liquidators needs to allow for profit.
+
+The least volatile currencies are stablecoins followed by ETH. They have the highest LTV at 75%, and the highest liquidation threshold at 80%.
+
+The most volatile assets have the lowest LTV at 35% and 40%. The liquidation thresholds are set at 65% to protect our users from a sharp drop in price which could lead to undercollaterisation followed by liquidation.
+
+</FiraText>
+
+<br />
+<br />
+<FiraText fontSize='18px'>_Market Capitalization</FiraText>
+<br />
+<FiraText>
+The market capitalization serves as an indicator of the market's size and plays a crucial role in collateral liquidation. Assets with smaller market capitalizations tend to have contained risks, but they are often more volatile due to their relatively less mature nature.
+
+A higher market capitalization, along with other factors, typically indicates a more established ecosystem. This includes greater liquidity on exchanges, which facilitates liquidations with minimal impact on prices. The market capitalization, along with liquidity both on exchanges and on MultichainZ, enables the assessment of liquidation risks. Consequently, the liquidation parameters are adjusted to mitigate the risk of high price impact liquidations for assets with smaller markets. In other words, the incentives for liquidation increase as the market capitalization decreases.
+
+</FiraText>
+
+<br />
+<br />
+<FiraText fontSize='18px'>_Overall Risk</FiraText>
+<br />
+<FiraText>
+  The overall risk rating is used to calibrate the Reserve Factor with factors
+  ranging from 10% for the less risky assets to 35% for the riskiest.
+</FiraText>

@@ -1,0 +1,21 @@
+{
+  "introduction": {
+    "title": "INTRODUCING MULTICHAINZ",
+    "fontSize": "14px"
+  },
+  "faq": "FAQ",
+  "token": "MULTICHAINZ TOKEN",
+  "governance": "GOVERNANCE FORUM",
+  "risk-management-framework": "RISK MANAGEMENT FRAMEWORK",
+  "asset-risk": "ASSET RISK",
+  "asset-risk-parameters": "ASSET RISK PARAMETERS",
+  "liquidity-risk": "LIQUIDITY RISK",
+  "interest-rate-model": "INTEREST RATE MODEL",
+  "flash-loans": "FLASH LOANS",
+  "build-on-multichainz": "BUILD ON MULTICHAINZ",
+  "developers": "DEVELOPERS",
+  "bug-bounty": "BUG BOUNTY",
+  "brand-assets": "BRAND ASSETS",
+  "terms-of-use": "TERMS OF USE",
+  "glossary": "GLOSSARY"
+}

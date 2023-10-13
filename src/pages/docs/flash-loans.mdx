@@ -1,0 +1,133 @@
+import {
+  FiraBold,
+  FiraText,
+  MultiWeightDiv,
+} from "../../components/Docs/Texts.tsx";
+import { CodeBlock } from "../../components/Docs/CodeBlock.tsx";
+
+<br />
+<br />
+<FiraBold fontSize='18px'>[FLASH LOANS]</FiraBold>
+<br />
+<br />
+<FiraText>
+  One of the key features of MultichainZ is the provision of flash loans, a
+  powerful tool that allows users to access liquidity without the need for
+  collateral. This document serves as a comprehensive guide to understanding and
+  utilizing the flash loan functionality offered by MultichainZ.
+</FiraText>
+<br />
+<br />
+<FiraBold fontSize='18px'>_How Flash Loans Work</FiraBold>
+<br />
+<FiraText>
+  Flash loans are a unique feature offered by MultichainZ that allows users to
+  borrow a significant amount of funds for a single transaction block, without
+  the need for collateral. The borrowed funds are made available to the user at
+  the beginning of the transaction and must be repaid within the same block. If
+  the repayment is not executed within the block, the entire transaction is
+  reversed, ensuring the protocol's security and preventing potential abuse.
+</FiraText>
+<br />
+<br />
+<FiraBold fontSize='18px'>_Integrating MultichainZ Flash Loans</FiraBold>
+<br />
+<FiraText>
+  To integrate MultichainZ flash loans into your application or smart contract,
+  follow these steps:
+</FiraText>
+
+<br />
+<br />
+<FiraText fontSize='18px'>_Smart Contract Integration</FiraText>
+<br />
+<CodeBlock>
+- <FiraText>Connect to MultichainZ: Establish a connection to the MultichainZ protocol using the appropriate middleware or library for the blockchain network you are working with.</FiraText>
+
+- <FiraText>
+    Import Flash Loan Interface: Import the MultichainZ Flash Loan interface to
+    interact with the flash loan functionality.
+  </FiraText>
+
+- <FiraText>
+    Implement Loan Execution Function: Develop a function within your smart
+    contract that defines the actions to be executed using the flash loan.
+  </FiraText>
+
+- <FiraText>
+    Implement Callback Function: Create a callback function that handles the
+    flash loan repayment and any additional logic required after the loan
+    execution.
+  </FiraText>
+
+</CodeBlock>
+
+<br />
+<FiraText fontSize='18px'>_Flash Loan Execution</FiraText>
+
+<br />
+<CodeBlock>
+- <FiraText>Request a Flash Loan: Within your smart contract, initiate a flash loan request by specifying the desired loan amount and the assets to be borrowed.</FiraText>
+
+- <FiraText>
+    Execute Loan Logic: Implement the necessary operations using the borrowed
+    funds. This can include arbitrage, collateral swapping, or any other
+    activity that fits within the constraints of the flash loan.
+  </FiraText>
+
+- <FiraText>
+    Repay the Flash Loan: Ensure that the borrowed funds, along with any
+    applicable fees, are repaid to the MultichainZ protocol before the end of
+    the transaction block.
+  </FiraText>
+
+- <FiraText>
+    Execute Callback Function: After repaying the flash loan, the callback
+    function within your smart contract will be triggered, allowing you to
+    execute any remaining logic or finalize the transaction.
+  </FiraText>
+
+</CodeBlock>
+
+<br />
+<FiraText fontSize='18px'>_Security Considerations</FiraText>
+<br />
+<FiraText>
+  When utilizing MultichainZ flash loans, it is essential to consider the
+  following security considerations:
+</FiraText>
+
+<br />
+<CodeBlock>
+- <FiraText>Smart Contract Auditing: Before integrating MultichainZ flash loans into your smart contract, it is crucial to conduct a thorough security audit. This ensures that your contract is free from vulnerabilities and potential exploits that could compromise the safety of flash loan transactions.</FiraText>
+
+- <FiraText>
+    Proper Loan Execution: Take caution when implementing the loan execution
+    logic within your smart contract. Ensure that all necessary checks,
+    calculations, and operations are accurately implemented to avoid potential
+    errors or manipulation attempts.
+  </FiraText>
+
+- <FiraText>
+    Transaction Reversal: Be aware that if the flash loan is not repaid within
+    the same transaction block, the entire transaction will be reversed.
+    Therefore, it is vital to handle and validate repayment conditions carefully
+    to avoid loss of funds or unintended consequences.
+  </FiraText>
+
+- <FiraText>
+    External Contract Interactions: If your flash loan implementation involves
+    interactions with external contracts or protocols, thoroughly review the
+    security and reliability of those contracts. Perform due diligence to
+    minimize the risk of vulnerabilities or malicious behaviour in the external
+    dependencies.
+  </FiraText>
+
+- <FiraText>
+    Contract Upgradability: Consider implementing upgradability patterns in your
+    smart contract design, allowing for future upgrades or bug fixes if
+    necessary. Ensure that upgradeability does not compromise the security and
+    integrity of the flash loan functionality.
+  </FiraText>
+
+</CodeBlock>

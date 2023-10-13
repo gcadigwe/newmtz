@@ -1,0 +1,142 @@
+import {
+  FiraBold,
+  FiraText,
+  MultiWeightDiv,
+} from "../../components/Docs/Texts.tsx";
+import { CodeBlock } from "../../components/Docs/CodeBlock.tsx";
+
+<br />
+<br />
+<FiraBold>[Governance]</FiraBold>
+
+<br />
+<FiraText>
+  MultichainZ presents a comprehensive framework for achieving decentralization
+  and autonomy within the MultichainZ Protocol. This framework encompasses
+  governance mechanisms and financial incentives, aiming to establish alignment
+  among various stakeholders within the MultichainZ ecosystem, protocol
+  functionality, and the core securing element, the Chainz token. Detailed
+  information can be found here.
+</FiraText>
+
+<br />
+
+<FiraBold>_Voting Requirements:</FiraBold>
+<br />
+<FiraText>
+  To participate in voting, you must possess Chainz tokens or stkChainz (Staked
+  Chainz) tokens. Both types of tokens can be used, and the voting power will be
+  calculated based on the combined amount of tokens you hold.
+</FiraText>
+
+<br />
+
+<FiraText fontSize='18px'>_How to Vote:</FiraText>
+
+<br />
+<CodeBlock>
+<MultiWeightDiv title="1." subText='Access the "Governance" section in the app and select the relevant proposal.'   />
+
+<MultiWeightDiv
+  title='2.'
+  subText='Review the proposal thoroughly to ensure a complete understanding of its contents.'
+/>
+
+<MultiWeightDiv
+  title='3.'
+  subText='If you wish to engage in discussions, click the provided link to join the conversation on the governance forum.'
+/>
+
+<MultiWeightDiv
+  title='4.'
+  subText='On the right-hand side, choose your desired vote option.'
+/>
+
+<MultiWeightDiv title='5.' subText='Confirm your vote.' />
+
+<MultiWeightDiv
+  title='6.'
+  subText='Congratulations! You have successfully cast your vote.'
+/>
+
+</CodeBlock>
+<br />
+<FiraText>Note: To ensure the validity of your vote, the balance of your voting tokens must remain the same or higher throughout the entire voting and validation period of the proposal.</FiraText>
+
+<br />
+<br />
+
+<FiraText fontSize='18px'>_Changing Your Vote</FiraText>
+
+<br />
+<FiraText>
+  You can easily change your vote by following the aforementioned steps and
+  casting your desired vote. Your previous vote will automatically be canceled.
+</FiraText>
+
+<br />
+<br />
+
+<FiraText fontSize='18px'>_Token Movement during Voting:</FiraText>
+
+<br />
+<FiraText>
+  You are permitted to move your Chainz tokens, as long as the amount in your
+  wallet used for voting remains equal to or higher than the tokens initially
+  used for voting. If you reduce your token amount below the voting tokens'
+  quantity, your vote will be canceled.
+</FiraText>
+
+<br />
+<br />
+
+<FiraText fontSize='18px'>_Adding More Tokens to Your Vote:</FiraText>
+
+<br />
+<FiraText>
+  Yes, you can vote again to reflect your updated token amount.
+</FiraText>
+
+<br />
+<br />
+
+<FiraText fontSize='18px'>_Voting Mechanism:</FiraText>
+
+<br />
+<FiraText>
+  For detailed information on the voting process, refer to the 'From Idea to
+  Implementation to Execution' post on the Governance forum. If you require a
+  more technical explanation, please consult the Governance section of the
+  Developer Docs.
+</FiraText>
+
+<br />
+<br />
+
+<FiraText fontSize='18px'>_Voting Threshold:</FiraText>
+
+<br />
+<FiraText>
+  The voting threshold is dynamic and can change based on the quorum and the
+  differential of votes for or against a MultichainZ Improvement Proposal (MIP).
+  If there are only a few votes against an MIP, the threshold remains the same.
+  However, if the votes against the MIP are more substantial, the threshold can
+  be increased, requiring a higher number of votes in favor for the MIP to pass.
+  This ensures that an MIP attains overwhelming approval before implementation.
+</FiraText>
+
+<br />
+<br />
+
+<FiraText fontSize='18px'>_For example:</FiraText>
+<br />
+<CodeBlock>
+  <FiraText>
+    If the quorum is set at 20%, the differential is 15%, and 2% of the total
+    votes are against the MIP, the threshold remains at 20% because 15 + 2 = 17,
+    which is less than 20. If the quorum is set at 20%, the differential is 15%,
+    and 6% of the total votes are against the MIP, the threshold would be raised
+    to 21% because 15 + 6 = 21. Consequently, more "yae" votes would be required
+    for the MIP to pass.
+  </FiraText>
+</CodeBlock>

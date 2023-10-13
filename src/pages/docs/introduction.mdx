@@ -1,0 +1,102 @@
+import {
+  FiraBold,
+  FiraText,
+  MultiWeightDiv,
+} from "../../components/Docs/Texts.tsx";
+import { CodeBlock } from "../../components/Docs/CodeBlock.tsx";
+
+export function InterText({ children }) {
+  return (
+    <div>
+      <div style={{ fontFamily: "inter", fontSize: "14px" }}>{children}</div>
+    </div>
+  );
+}
+
+&nbsp;
+
+<FiraBold>[INTRODUCING MULTICHAINZ]</FiraBold>
+
+&nbsp;
+
+<FiraText>
+  Bittensor is a mining network, similar to Bitcoin, that offers
+  censorship-resistant access to a decentralized network of machine learning
+  models. By leveraging digital incentives and rewarding participants directly
+  for their contributions of computational resources, expertise and innovation,
+  Bittensor establishes a comprehensive, open-source ecosystem of artificial
+  intelligence competencies. The native currency, TAO, constitutes both reward
+  and access token to the network.
+</FiraText>
+<br />
+<FiraText>
+  This documentation covers the three primary ways that users can interact with
+  Bittensor: mining, validating, and through the API as a client.
+</FiraText>
+<br />
+
+<FiraText fontSize='16px'>_MultichainZ Token</FiraText>
+<br />
+<FiraText>
+  The MultichainZ Tokenomics the road to a Decentralised Autonomous Organisation
+  (DAO){"  "} [Here](https://link-url-here.org)
+</FiraText>
+<br />
+<FiraText>
+  Follow{"  "} [this](https://link-url-here.org) link to begin.
+</FiraText>
+<br />
+
+```
+
+bittensor/
+    neurons/
+         text/
+             prompting/
+                 miners/
+                     GPT4ALL/
+                          neuron.py
+
+```
+
+<br />
+
+<FiraText fontSize='16px'>_validating</FiraText>
+<br />
+<FiraText>
+  Tao holders who wish to govern Bittensor directly and use the network at its
+  full capactiy bandwidth and fidelity. Start [here]("")
+</FiraText>
+<br />
+
+```
+
+bittensor/
+    neurons/
+         text_to_embedding/
+         text_prompting/
+              validators/
+                  core/
+                      neuron.py
+
+```
+
+<br />
+
+<FiraText fontSize='16px'>_api</FiraText>
+<br />
+<FiraText>
+  Users, researchers or companies, seeking to access bittensor directly using
+  client facing APIs. Start [here]("")
+</FiraText>
+<br />
+
+<CodeBlock>
+<FiraText>In [4]: llm( "Heraclitus was a ?" )</FiraText>
+<br />
+<FiraText>
+  Out[4]: 'Greek philosopher known for his doctrine of change and the famous
+  quote, "No man ever steps in the same river twice."'
+</FiraText>
+
+</CodeBlock>

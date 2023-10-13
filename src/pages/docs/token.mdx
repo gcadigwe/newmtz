@@ -1,0 +1,565 @@
+import allocationchart from '../../assets/allocationchart.png';
+import saleprocedurechart from '../../assets/saleprocedurechart.png';
+import vestingschedule from '../../assets/vestingschedule.png';
+import unlockingschedule from '../../assets/unlockingschedule.png';
+import AllocationTable from '../../components/Docs/AllocationTable.tsx'
+import TokenSaleTable from '../../components/Docs/TokenSaleTable.tsx'
+import {FiraBold, FiraText,MultiWeightDiv} from '../../components/Docs/Texts.tsx'
+import TableTitle from '../../components/Docs/TableTitle.tsx'
+import { Bleed } from 'nextra-theme-docs'
+import {CodeBlock} from '../../components/Docs/CodeBlock.tsx'
+import FAQTemplate from '../../components/Docs/FAQTemplate.tsx'
+
+export function AllocationText({ title, subText }) {
+
+return (
+
+<div>
+  <p style={{ fontFamily: "fira-code", fontWeight: "bold" }}>
+    {title} <span style={{ fontWeight: "400" }}>{subText}</span>{" "}
+  </p>
+</div>
+); }
+
+<br />
+<br />
+
+<FiraBold>[MultiChainZ Token]</FiraBold>
+<br />
+<br />
+<FiraBold>_Token Information</FiraBold>
+<br />
+
+<CodeBlock>
+
+{" "}
+
+<div style={{ display: "flex", alignItems: "center" }}>
+  <FiraBold>Token Name:</FiraBold>
+  <div style={{ marginLeft: "10px" }}>
+    <FiraText>Multichainz</FiraText>
+  </div>
+</div>
+
+<br />
+
+<div style={{ display: "flex", alignItems: "center" }}>
+  <FiraBold>Token Symbol:</FiraBold>
+  <div style={{ marginLeft: "10px" }}>
+    <FiraText>CHAINZ</FiraText>
+  </div>
+</div>
+
+<br />
+
+<div style={{ display: "flex", alignItems: "center" }}>
+  <FiraBold>Token Supply:</FiraBold>
+  <div style={{ marginLeft: "10px" }}>
+    <FiraText>10,000,000,000 (10 billion tokens)</FiraText>
+  </div>
+</div>
+
+</CodeBlock>
+
+<br />
+<br />
+
+<FiraBold>_Foreword</FiraBold>
+<br />
+<FiraText>
+  In recent years, tokenized currencies have disrupted the financial markets by
+  introducing an alternative efficient way of transferring and storing economic
+  value. Striving to take advantage of this technology to provide value to the
+  community, Multichainz has a native token that will power its financial
+  services. Multichainz acknowledges that the potential of tokens goes beyond
+  just being a digital asset. With the advent of blockchain benefits, tokens can
+  facilitate the creation of Decentralized Autonomous Organizations (DAOs) that
+  allow for democratic decision-making and community ownership. To facilitate
+  this, Multichainz introduces a new token (CHAINZ), which powers its DAO
+  community, serves as a utility token to pay for protocol transaction fees, and
+  facilitates access to Multichainz lending, borrowing, and staking services.
+  CHAINZ will be available across multiple blockchains, enabling broader access
+  to users and integration with other projects. This multi-chain token will play
+  a significant role in the ecosystem development of the protocol, enabling
+  seamless and frictionless transactions between community members and
+  stakeholders. Additionally, it will facilitate strategic support and promotion
+  of shared interests from relevant stakeholders allowing forthe long-term
+  success ofthe product. This paper will delve into the CHAINZ tokenomics.
+  First, it examines how the token will be distributed. Then, it explains how
+  the token will facilitate economic incentives to ensure the stability and
+  growth of the protocol. The main aim is to provide a comprehensive
+  understanding ofthe token, its role within the ecosystem, and how it will
+  contribute to the development ofthe blockchain lending sector.
+</FiraText>
+
+<br />
+<br />
+<FiraBold>_Token Allocation</FiraBold>
+<br />
+<FiraText>
+  In recent years, tokenized currencies have disrupted the financial markets by
+  introducing an alternative efficient way of transferring and storing economic
+  value. Striving to take advantage of this technology to provide value to the
+  community, Multichainz has a native token that will power its financial
+  services. Multichainz acknowledges that the potential of tokens goes beyond
+  just being a digital asset. With the advent of blockchain benefits, tokens can
+  facilitate the creation of Decentralized Autonomous Organizations (DAOs) that
+  allow for democratic decision-making and community ownership. To facilitate
+  this, Multichainz introduces a new token (CHAINZ), which powers its DAO
+  community, serves as a utility token to pay for protocol transaction fees, and
+  facilitates access to Multichainz lending, borrowing, and staking services.
+  CHAINZ will be available across multiple blockchains, enabling broader access
+  to users and integration with other projects. This multi-chain token will play
+  a significant role in the ecosystem development of the protocol, enabling
+  seamless and frictionless transactions between community members and
+  stakeholders. Additionally, it will facilitate strategic support and promotion
+  of shared interests from relevant stakeholders allowing forthe long-term
+  success ofthe product. This paper will delve into the CHAINZ tokenomics.
+  First, it examines how the token will be distributed. Then, it explains how
+  the token will facilitate economic incentives to ensure the stability and
+  growth of the protocol. The main aim is to provide a comprehensive
+  understanding ofthe token, its role within the ecosystem, and how it will
+  contribute to the development ofthe blockchain lending sector.
+</FiraText>
+<br />
+<br />
+
+<FiraBold>_Token Allocation</FiraBold>
+<br />
+<FiraText>
+  The distribution of tokens is a critical aspect of any blockchain project, as
+  it determines the project's success or failure. Multichainz acknowledges that
+  the initial allocation of tokens and the ongoing distribution mechanisms can
+  have a significant impact on the token's value, adoption, and overall network
+  effects. Multichainz’s goal is to ensure a fair and equitable allocation of
+  tokens to all stakeholders while incentivizing participation and ecosystem
+  growth contribution of community members. The token allocation will help
+  Multichainz to build a strong and engaged community of users and relevant
+  stakeholders. Thus, the Multichainz token will have the following distribution
+  chart:
+</FiraText>
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src={allocationchart.src} />
+</div>
+
+<FiraText>
+  Each allocation group is crucial to the protocol’s development,
+  sustainability, and long-term success. Thus, we detailthe distribution
+  further:
+</FiraText>
+
+<br />
+
+    + <AllocationText title={"40% will be allocated to Multichainz Foundation (Up to a 10-year vestingschedule completion; tokens will be unlocked from the end of year 1 andstored by a custodian partner and managed by the DAO): 4,000,000,000(4 billion)."} subText={"These tokens will be used to support the ecosystem’s ongoing development and infrastructure maintenance for ten years. Multichainz foundation tokens will ensure that financial needs that arise to achieve ecosystem growth are covered since the protocol’s conception."}   />
+
+- <AllocationText
+    title={
+      "20% will be allocated to Marketing Activities (Vested for 3 years; linear vesting with 9% quarterly unlocks): 2,000,000,000 (2 billion)."
+    }
+    subText={
+      "These tokens will be used to promote the protocol and increase Multichainz’s visibility amongst potential users. The tokens will be mainly used in community-building incentivized campaigns, partnership creations, and the solution’s promotion."
+    }
+  />
+
+- <AllocationText
+    title={
+      "20% will be allocated to Multi-Stage Sale (Each stage has a different vesting schedule): 2,000,000,000 (2 billion)."
+    }
+    subText={
+      "These tokens will be used to secure not only early-stage funding for the ecosystem’s early development and improvement but also to consolidate long-term strategic relationships with investors and initial community members who can bring value added to Multichainz."
+    }
+  />
+
+- <AllocationText
+    title='10% will be allocated to Liquidity & Exchanges Purposes (No vesting schedule; to be used over 2 years): 1,000,000,000 (1 billion).'
+    subText='These tokens will be destinated to make the protocol’s tokens easily tradeable and accessible to users, token holders, and stakeholders across multiple exchanges with stable long-term ensured liquidity.'
+  />
+
+- <AllocationText
+    title='5% will be allocated to the Founding Team (Vested for 1 year; vesting with monthly linear unlocks): 500,000,000 (500 million).'
+    subText=' These tokens will be used to obtain and retain passionate professionals that are eager to help Multichainz grow and develop. This allocation will ensure that early project contributors are rewarded accordingly.'
+  />
+
+- <AllocationText
+    title='3% will be allocated to Initial Adopters Distribution (Vested for 1 year; vesting with monthly linear unlocks): 300,000,000 (300 million).'
+    subText="These tokens will ensure the strategic and timely acquisition of Multichainz's early adopters. Through the strategic structure of early incentivized programs, initial adopters will be incentivized through token rewards for their Multichainz use, adoption, and promotion."
+  />
+
+- <AllocationText
+    title='2% will be allocated to Treasury Allocation (Vested for 2 years; vesting with monthly linear unlocks): 200,000,000 (200 million).'
+    subText='These tokens will ensure stability in the liquidity of the protocol’s pools as the treasury allocation will act as an emergency liquidity stabilization mechanism, where we will ensure that all our pools have sufficientliquidity to function.'
+  />
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  <br />
+  <br />
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  <AllocationTable />
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  <br />
+  <FiraBold>_Token Sale Procedure</FiraBold>
+  <br />
+  <FiraText>_Overview</FiraText>
+  <br />
+  <FiraText>
+    Multichainz, through its incubator AS Labs based in Singapore, will conduct
+    a token sale procedure that comprises a multi-stage token sale to raise
+    funds for its further development. The token sale procedure will be crucial
+    in ensuring long-term ecosystem success and will allow Multichainz to scale
+    decentralized tokenized asset lending to institutions and retail users.
+    Multichainz will ensure that the fundraising procedure is transparent and
+    compliant with regulatory requirements. The raised funds will be allocated
+    to research and development, marketing and adoption, liquidity provision,
+    partner acquisition, security enhancements, and technical development. The
+    token involved in the sale will be a native governance token that will allow
+    stakeholders to vote on ecosystem decisions and a utility one that allows
+    holders to pay for Multichainz protocol transactions and more relevantly,
+    access protocol-exclusive opportunities.
+  </FiraText>
+  <br />
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  <FiraText>_Fundraising Details</FiraText>
+  <br />
+  <FiraText>
+    Multichainz’s fundraising process will be conducted via a staged ordered
+    sale, whereby each fundraising stage will be conducted in the following
+    order: Seed/Lead, Angels/KOLs, Private, Discord, Twitter, BSC Community, and
+    Public. Following this order will ensure the appropriate and timely
+    attraction and retention of different investors, development partners, and
+    community members. The funds obtained through the fundraising will be
+    destinated to ecosystem development; it will allow the founding team can
+    guide Multichainz to meeting its goal of providing a tokenized real-world
+    asset lending platform to institutions. The process of fundraising for
+    investors will entail signing a “Simple Agreements for Future Tokens”
+    (SAFTs), “a Memorandum of Understanding” (MOUs), and providing other
+    relevant documents to ensure compliance with Know Your Customer (KYC)
+    regulations. <br />
+    Below are the details of each step:
+  </FiraText>
+
+  {" "}
+
+  {" "}
+
+  {" "}
+
+  <br />
+  <FiraText>_1</FiraText>
+  <br />
+  <MultiWeightDiv
+    title='Ordered and Limited Sale:'
+    subText=' Multichainz will sell tokens at a fixed price in each round to a limited number of investors in accordance with the round’s “Hard Cap” (upper limit of funds to raise ensuring a limited supply of tokens to respect the token’s fixed total supply). The sale will be conducted in rounds, with each round offering a defined number oftokens. The price ofthe tokens will increase with each subsequent round to provide appropriate incentives for early backers and supporters.'
+  />
+
+  {" "}
+
+  {" "}
+
+  <br />
+  <FiraText>_2</FiraText>
+  <br />
+  <MultiWeightDiv
+    title='Simple Agreements for Future Tokens (SAFTs): '
+    subText='Multichainz will require investors to sign a SAFTs, which is an investment contract that will allow investors to purchase tokens before they are available on the market. This will ensure that investors receive their tokens according to the vesting schedule set per each round after the tokens are available for public sale and that Multichainz receives the agreed investmentfunds by investors in a timely and orderly manner.'
+  />
+
+  {" "}
+
+  <br />
+  <FiraText>_2</FiraText>
+  <br />
+
+  {" "}
+
+  <MultiWeightDiv
+    title='Memorandums of Understanding (MOUs):'
+    subText=' Multichainz will use MOUs, which are non-binding agreements that outline the terms of a proposed partnership between two companies. In the context of Multichainz, MOUs will be used to establish partnerships with investors to contribute to the ecosystem’s strategic development. The MOU will outline the terms of the partnership with investors to define the ways in which each can help Multichainz succeed.'
+  />
+
+  {" "}
+
+  <br />
+
+  {" "}
+
+  <FiraText>
+    Each element of the fundraising stage will be crucial to the success of
+    Multichainz by helping the project define transparent, long-term strategic
+    partnerships with investors.
+  </FiraText>
+
+  <br />
+
+  <FiraText>_Sale Distribution and Procedure</FiraText>
+  <br />
+  <FiraText>
+    The Multi-Stage Sale will be divided into different rounds that will ensure
+    that Multichainz’s native token is fairly distributed and decentralized
+    since its Token Event Generation (TGE). Each round aims to target the
+    acquisition of relevant stakeholders, which will be diverse strategic
+    partners to help Multichainz scale and gain mass adoption. From investors to
+    social media community members, this staged sale will provide a unique
+    opportunity to properly reward early investors, while also including
+    community members that deserve to be rewarded at an early stage for their
+    community development contributions. Here’s the distribution ofthe
+    multi-staged token allocation:
+  </FiraText>
+
+<br />
+<TableTitle>{"$ChainZ Token Sale Distribution and Procedure"}</TableTitle>
+<TokenSaleTable />
+<br />
+<MultiWeightDiv
+  title='Note:'
+  subText='Assumptions for ETH/BNB Raise calculation are 1 ETH=1,900 USD and 1 BNB=300 USD'
+  fontSize='10px'
+/>
+<br />
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src={saleprocedurechart.src} />
+</div>
+<br />
+<CodeBlock>
+ - <MultiWeightDiv title="Seed/Lead Sale Price:"  subText="$0.003 pertoken"  />
+ - <MultiWeightDiv title="Angels/KOLs Sale Price:"  subText="$0.007 pertoken"  />
+ - <MultiWeightDiv title="Private Sale Price:"  subText="$0.009 pertoken"  />
+ - <MultiWeightDiv title="Discord OG Sale Price:"  subText="$0.015 pertoken"  />
+ - <MultiWeightDiv title="Twitter OG Sale Price:"  subText="$0.015 pertoken"  />
+ - <MultiWeightDiv title="BSC Community Sale Price:"  subText="$0.015 pertoken"  />
+ - <MultiWeightDiv title="Public Sale Price:"  subText="$0.02 pertoken"  />
+
+</CodeBlock>
+<br />
+
+<CodeBlock>
+ - <MultiWeightDiv title="Seed/Lead Sale Cap:"  subText="$1,200,000 (one million two hundred dollars)"  />
+ - <MultiWeightDiv title="Angels/KOLs Sale Cap:"  subText="$2,100,000 (two million one hundred dollars)"  />
+ - <MultiWeightDiv title="Private Sale Cap:"  subText="$3,600,000 (three million six hundred dollars)"  />
+ - <MultiWeightDiv title="Discord OG Sale Cap:"  subText="$1,500,000 (one million five hundred dollars)"  />
+ - <MultiWeightDiv title="Twitter OG Sale Cap:"  subText="$OG Sale Cap: $1,500,000 (one million five hundred dollars)"  />
+ - <MultiWeightDiv title="BSC Community Sale Cap:"  subText="$1,500,000 (one million five hundred dollars)"  />
+ - <MultiWeightDiv title="Public Sale Cap:"  subText="$12,000,000 (twelve million dollars)"  />
+
+</CodeBlock>
+
+<br />
+<FiraText>
+  The token sale described here is not intended for citizens or residents of
+  countries where such sales are prohibited or restricted. Multichainz does not
+  offer its tokens or services to citizens or residents of any country where
+  such offer or sale would be contrary to the local law or regulation.
+</FiraText>
+
+<br />
+
+<FiraBold>_Token Vesting Schedule</FiraBold>
+<br />
+<FiraText>
+  Vesting refers to the process in which tokens are released gradually over
+  time, rather than all at once. Multichainz has determined a vesting schedule
+  with a four-year predetermined timeline for the release of the sold tokens in
+  the fundraising procedure. This vesting schedule will ensure a long-term
+  strategic collaboration with investors while avoiding token dumps that can
+  have the overall Multichainz network, and most importantly, the long-term
+  ecosystem development.
+
+While investors might be skeptical to commit funds for five years in a highly
+volatile environment, this schedule ensures that the team has and will
+continue to have a long-term focus on ecosystem development. In turn, this
+long-term commitment speaks about their intent of them to make Multichainz a
+trusted, widely adopted, and real-world useful lending service and token.
+Since Multichainz understands the difficulty in committing funds to the
+blockchain industry nowadays, it commits to providing investors with
+appropriate incentives, discounts, and token launch timelines consistent with
+the project’s sustainable development. The vesting schedule for each group is
+as follows:
+
+</FiraText>
+
+<br />
+
+<CodeBlock>
+- <MultiWeightDiv
+    title='Multichainz Foundation Tokens:'
+    subText='Up to 10-year vesting. Stored with custodian partner and managed by DAO.'
+  />
+- <MultiWeightDiv
+    title='Marketing Tokens:'
+    subText='Vested for 1 year. Linear vesting with 9% unlocks every quarter.'
+  />
+- <MultiWeightDiv
+    title='Liquidity & Exchanges Tokens:'
+    subText='No vesting schedule.'
+  />
+- <MultiWeightDiv
+    title='Team Tokens:'
+    subText='Vested for 1 year. Linear vesting with monthly unlocks.'
+  />
+- <MultiWeightDiv
+    title='Treasury Tokens:'
+    subText='Vested for1 year. Linear vesting with monthly unlocks.'
+  />
+
+- <MultiWeightDiv
+    title='Initial Adopters Tokens:'
+    subText='Vested for 2 years. Linear vesting with monthly unlocks.'
+  />
+- <MultiWeightDiv
+    title='Seed/Lead Tokens:'
+    subText='Vested for 5 years with a 6-month cliff. Afterward,there will be 10% unlocks every semester.'
+  />
+- <MultiWeightDiv
+    title='Angels/KOLs Tokens:'
+    subText='Vested for 3 years. 10% unlock after 5 days of TGE followed by 15% unlocks every semester.'
+  />
+- <MultiWeightDiv
+    title='Private Tokens:'
+    subText='Vested for 22 months with a 6-month cliff. Afterward,there will be 20% unlocks every quarter.'
+  />
+- <MultiWeightDiv
+    title='Discord OG Tokens:'
+    subText='Vested for 10 months. 10% unlock at TGE. Afterward, there will be 9% monthly unlocks.'
+  />
+- <MultiWeightDiv
+    title='Twitter OG Tokens:'
+    subText='Vested for 10 months. 10% unlock at TGE. Afterward, there will be 9% monthly unlocks.'
+  />
+
+- <MultiWeightDiv
+    title='BSC Community Tokens:'
+    subText='Vested for 9 months. 10% unlock at TGE. Afterward,there will be 10% monthly unlocks.'
+  />
+
+- <MultiWeightDiv
+    title='Public Sale Tokens:'
+    subText='Vested for 9 months. 10% unlock at TGE. Afterward, there will be 30% unlocks every 3 months with the last10% unlock happening in the 9th month.'
+  />
+</CodeBlock>
+
+<br />
+<br />
+
+<FiraBold>_Token Vesting Schedule</FiraBold>
+<br />
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src={vestingschedule.src} />
+</div>
+
+<br />
+<FiraBold>Total Supply Unlocking Schedule</FiraBold>
+<br />
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src={unlockingschedule.src} />
+</div>
+<br />
+<br />
+
+<FiraBold>_Token Sale Frequently Asked Questions (FAQs)</FiraBold>
+
+<br />
+
+<FAQTemplate
+  title='What is a token sale?'
+  subText='A token sale is a fundraising method used by blockchain-based projects to raise funds by selling their own native tokens or digital assets.'
+/>
+
+<br />
+
+<FAQTemplate
+  title='How does the token sale work?'
+  subText='In the token sale, Multichainz has set a target amount of funds to raise. ultichainz will offer its tokens for sale to investors and the public. Investors can purchase these tokens using a stablecoin previously determined by the team. The tokens will represent a stake in the project and will have a governance utility in the project, meaning that each investor will have voting power in the decisions ofthe project.'
+/>
+
+<br />
+
+<FAQTemplate
+  title='What are the risks associated with participating in the token sale?'
+  subText='Participating in any token sale can be risky as projects are often in their early stages. Hence, investors are fully responsible fortheir investment decisions and need to be properly informed before making a decision. With this document, Multichainz ensures that the token sale and distribution details are fully available and transparent to investors and the general public.'
+/>
+
+<br />
+
+<FAQTemplate
+  title='What are the risks associated with participating in the token sale?'
+  subText='Participating in any token sale can be risky as projects are often in their early stages. Hence, investors are fully responsible fortheir investment decisions and need to be properly informed before making a decision. With this document, Multichainz ensures that the token sale and distribution details are fully available and transparent to investors and the general public.'
+/>
+
+<br />
+
+<FAQTemplate
+  title='What is the difference between public and private token sale?'
+  subText='The public token sale is open to the public through sale platform partners, while the private token sale will only be available to accredited investors or invited participants. Thus, private token sales have a higher investment requirement and offer differentincentives than public sale terms.'
+/>
+
+<br />
+
+<FAQTemplate
+  title='What happens after the token sale is complete?'
+  subText='After the token sale is complete, the tokens will be distributed to the investors as per the details outlined in this paper. Multichainz team will use the funds raised to continue the development ofthe project, ensuring its long-term success. Once the tokens are released according to the agreed vesting schedule, investors are free to choose between holding onto their tokens or trading them on exchanges as they see fit.'
+/>
+
+<br />
+
+<FAQTemplate
+  title='What is the token sale cap?'
+  subText='$23.4 million USD (twenty-three million four hundred dollars) to be raised through the Seed, Private, and Public Sale.'
+/>
+
+<br />
+
+<FAQTemplate
+  title='What is the total token supply?'
+  subText='10 billion $CHAINZ (ten billion tokens) deployed and distributed over four years to the relevant stakeholders and purposes.'
+/>
+
+<br />
+
+<FAQTemplate
+  title='What is the release schedule forthe Multichainz token?'
+  subText='Multichainz has determined a vesting schedule with a four-year predetermined timeline for the release of the sold tokens in the fundraising procedure, meaning the totaltoken supply from the sale will be released afterfour years.'
+/>
+
+<br />
+
+<FAQTemplate
+  title="Who can participate in Multichainz's token sale?"
+  subText='The token sale described here is not intended for citizens or residents of countries where such sales are prohibited or restricted. Multichainz does not offer its tokens or services to citizens or residents of any country where such offer or sale would be contrary to the local law or regulation.'
+/>

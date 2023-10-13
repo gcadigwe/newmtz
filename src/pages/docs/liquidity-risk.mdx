@@ -1,0 +1,49 @@
+import {
+  FiraBold,
+  FiraText,
+  MultiWeightDiv,
+} from "../../components/Docs/Texts.tsx";
+import { CodeBlock } from "../../components/Docs/CodeBlock.tsx";
+
+<br />
+<br />
+<FiraBold fontSize='18px'>[LIQUIDITY RISK]</FiraBold>
+<br />
+<br />
+
+<FiraText>
+The liquidity of the protocol is determined by the presence of available assets for essential operations within the protocol, including borrowing assets secured by collateral and claiming supplied assets with accrued yield. This metric is of utmost importance, as a shortage of liquidity can impede these operations.
+
+The current liquidity of the protocol can be evaluated by examining the utilization ratio, which represents the proportion of reserves that are currently being borrowed compared to the overall MultichainZ’s supply of each asset.
+
+To mitigate liquidity risk, the protocol employs tools such as the borrow interest rate model and alternative sources of aToken liquidity. These measures help maintain sufficient liquidity levels and ensure the smooth functioning of the protocol.
+
+</FiraText>
+
+<br />
+<br />
+<FiraBold fontSize='18px'>_Borrow Interest Rate</FiraBold>
+<br />
+<FiraText>
+MultichainZ interest rate algorithm is designed to handle liquidity risk and maximize efficiency. The interest rates for borrowing are determined based on the Utilisation Rate (U).
+
+The Utilisation Rate (U) indicates the amount of capital available in the pool. The interest rate model effectively manages liquidity risk by providing user incentives that promote liquidity support:
+
+</FiraText>
+<br />
+<CodeBlock>
+  <FiraText>
+    1. When there is abundant capital, the interest rates are kept low to
+    encourage borrowing.
+  </FiraText>
+  <FiraText>
+    2. When capital becomes scarce, the interest rates are increased to
+    encourage the repayment of debt and additional supply.
+  </FiraText>
+</CodeBlock>
+<br />
+
+<FiraText>
+  If you want to access the interest rate strategy contract on the blockchain,
+  you can refer to the specified section of the developer documentation.
+</FiraText>

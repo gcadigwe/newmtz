@@ -1,0 +1,162 @@
+import {
+  FiraBold,
+  FiraText,
+  MultiWeightDiv,
+} from "../../components/Docs/Texts.tsx";
+import { CodeBlock } from "../../components/Docs/CodeBlock.tsx";
+
+<br />
+<br />
+
+<FiraBold>[ASSET RISK]</FiraBold>
+
+<br />
+<br />
+
+<FiraText>
+The DeFi ecosystem's ability to be combined suggests that risks associated with one component affect all interconnected systems. Liquidity plays a crucial role in MultichainZ as it facilitates the protocol's functioning and enhances user satisfaction.
+
+This document introduces a framework for evaluating the risk of tokens in MultichainZ. The risk assessment method takes into account market dynamics, counter-party risks, and potential vulnerabilities in smart contracts of the chosen tokens. The goal is to promote elevated risk standards in the realm of DeFi.
+
+</FiraText>
+
+<br />
+<FiraBold>_Adding asset</FiraBold>
+<br />
+<FiraText>
+MultichainZ allows individuals to contribute and lend digital assets by utilizing pools of liquidity. Participants who contribute assets receive aTokens issued by the protocol, which represent their supplied assets and the interest earned. When someone borrows from the platform, they provide collateral as security to reduce the risk of default. For a more in-depth understanding of how the system operates, you can refer to MultichainZ Technical Paper.
+
+Given the specificities of MultichainZ, the listed assets below follow specific considerations:
+
+</FiraText>
+
+<br />
+
+<CodeBlock>
+- <FiraText>Polygon market assets</FiraText>
+- <FiraText>Harmony market assets</FiraText>
+- <FiraText>Avalanche market assets</FiraText>
+- <FiraText>Arbitrum market assets</FiraText>
+- <FiraText>Optimism market assets</FiraText>
+- <FiraText>Fantom market assets</FiraText>
+
+</CodeBlock>
+
+<br />
+<br />
+<FiraText fontSize='18px'>_1</FiraText>
+<br />
+<MultiWeightDiv
+  title='Including each additional token in transactions permanently raises the gas cost,'
+  subText='as it adds complexity to the smart contract, resulting in increased costs.'
+/>
+
+<br />
+<br />
+<FiraText fontSize='18px'>_2</FiraText>
+<br />
+<MultiWeightDiv
+  title='The introduction of each token as collateral in MultichainZ raises the risk of insolvency for the protocol.'
+  subText="From a financial standpoint, the token used as collateral can be seen as MultichainZ's assets, while the borrowed tokens are considered its liabilities. It's important to note that the underlying tokens for assets and liabilities often differ, with stablecoins commonly used for borrowing and volatile tokens used as collateral. Therefore, when adding new tokens, the MultichainZ Community must carefully consider the following factors:"
+/>
+
+<br />
+
+<CodeBlock>
+
+- <FiraText>
+    Only assets with best risk profiles should be supported as collateral.
+  </FiraText>
+- <FiraText>
+    Only assets with best risk profiles should be supported as collateral.
+    Riskier assets should only be allowed as collateral under Isolation mode,
+    which provides additional safeguards.
+  </FiraText>
+- <FiraText>
+    When considering new assets with higher risk and lower liquidity, it is recommended to list them exclusively under Isolation mode, both for borrowing and using them as collateral.
+  </FiraText>
+</CodeBlock>
+
+<br />
+
+<FiraText fontSize='18px'>_3</FiraText>
+<br />
+<MultiWeightDiv
+  title='Including a centralized asset as collateral introduces centralization risk to the protocol.'
+  subText="The vulnerability of the underlying tokens' single point of failure extends to the MultichainZ Protocol."
+/>
+
+<br />
+
+<FiraText fontSize='18px'>_4</FiraText>
+<br />
+<MultiWeightDiv
+  title='Assets that possess manipulable oracle risk are listed as singular borrow assets.'
+  subText='In other words, if a user borrows such an asset, they are restricted from borrowing any other asset.'
+/>
+
+<br />
+
+<FiraText fontSize='18px'>_5</FiraText>
+<br />
+<FiraText>
+  Tokens only enabled for supplying and borrowing (i.e., not usable as
+  collateral) present lower risk for MultichainZ protocol. Collateral are the
+  assets of the protocol. To remain solvent, these assets must remain greater
+  than the liabilities borrowed from the protocol. Tokens which can only be used
+  for borrowing should always be excessively backed by collateral assets (e.g.,
+  a user can supply DAI as collateral and borrow DAI in variable mode backed by
+  DAI as collateral; however, this is not the case for agEUR which is not usable
+  as collateral and must always be borrowed against less risky assets).
+</FiraText>
+
+<br />
+
+<FiraText fontSize='18px'>_6</FiraText>
+<br />
+<MultiWeightDiv
+  title='Having liquidity from different tokens reduces risks via diversification benefits.'
+  subText='When adding a token to the protocol, significant analysis must be made by the MultichainZ community to ensure that the asset will add more value than risk. Only tokens with a worthy product and significant community should be considered. The asset risk methodology offers a framework to assess and compare tokens’ risks to the protocol, and how to calibrate model asset parameters to mitigate those risks.'
+/>
+
+<br />
+
+<FiraBold>_Methodology</FiraBold>
+
+<br />
+<FiraText>
+The composability of DeFi allows MultichainZ to connect with the wider ecosystem, but it also exposes the protocol to various risks within the ecosystem. Tokens used in the protocol play a critical role, especially those accepted as collateral to ensure the protocol's solvency. Evaluating an asset's exposure to undue risk involves considering three key aspects: smart contract risk, counterparty risk, and market risk.
+
+Firstly, the MultichainZ community needs to assess the security of the smart contracts and any risks associated with counterparties involved in the token's protocol governance. If the risks are deemed excessively high, it is necessary to disqualify the tokens from being used within the MultichainZ protocol or list them in Isolation Mode. Furthermore, the MultichainZ community should consistently monitor risks, particularly market risks, and manage them through the protocol's risk parameters.
+
+</FiraText>
+
+<br />
+
+<FiraBold>_Risk Factors</FiraBold>
+<br />
+<br />
+
+<FiraText fontSize='18px'>_Smart Contract Risks</FiraText>
+<br />
+<FiraText>
+The evaluation of smart contract risk involves assessing the technical security of the underlying code for each asset. Only assets with code that has undergone thorough audits conducted by reputable auditors are deemed suitable for integration into the MultichainZ protocol. However, it is important to note that smart contract risk can never be completely eliminated, and users must exercise caution when assessing such risks. Bug bounties can be utilized to help minimize smart contract risk. The maturity of code can be evaluated based on factors such as the number of days and transactions associated with a specific smart contract, as well as its usage, community support, development activity, and reliability. These factors serve as indicators of how extensively the code has been tested in real-world scenarios.
+
+Significant financial losses have already occurred due to smart contract hacks. Therefore, tokens with the highest smart contract risk (i.e., those categorized as D+ and below) are considered extremely risky as collateral. Their inclusion in the protocol should be accompanied by stringent risk mitigation measures such as supply caps or isolation mode.
+
+</FiraText>
+
+<br />
+<br />
+<FiraText fontSize='18px'>_Counterparty Risk</FiraText>
+<br />
+<FiraText>
+  Counterparty risk evaluates the governance structure and control mechanisms
+  surrounding an asset. The degree of governance decentralization plays a
+  crucial role in assessing the level of direct control over funds, potential
+  vulnerabilities within the governance architecture, and the exposure of
+  control and funds. Counterparty risk is influenced by the extent of
+  centralization, measured by factors such as the number of parties governing a
+  token's protocol, the number of token holders, and the level of trust placed
+  in the entity, project, community, or processes.
+</FiraText>
