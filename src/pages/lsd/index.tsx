@@ -32,7 +32,7 @@ import Footer from "@/components/NewFooter";
 
 import { useEffect, useMemo, useState, useRef } from "react";
 import { pb } from "@/utils/auth";
-import axios from "axios";
+
 // import fs from "fs";
 
 export default function LSD() {
