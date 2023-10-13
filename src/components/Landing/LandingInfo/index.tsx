@@ -93,7 +93,11 @@ export default function LendingInfo({ sectionInfo }: any) {
 
       <Flex flexDirection={"column"}>
         {sectionInfo?.cards.map((card: any, idx: any) => (
-          <CardComponent mt={idx == 0 ? "0px" : "600px"} cardInfo={card} />
+          <CardComponent
+            key={idx}
+            mt={idx == 0 ? "0px" : "600px"}
+            cardInfo={card}
+          />
         ))}
         {/* <CardComponent mt={"0px"} element={"first"} />
         <CardComponent mt={"600px"} element={"second"} />
