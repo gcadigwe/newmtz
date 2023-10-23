@@ -32,7 +32,6 @@ import Footer from "@/components/NewFooter";
 
 import { useEffect, useMemo, useState, useRef } from "react";
 import { pb } from "@/utils/auth";
-import axios from "axios";
 import WhyCard from "@/components/Lsd/WhyCard";
 // import fs from "fs";
 
