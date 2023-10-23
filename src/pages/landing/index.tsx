@@ -314,7 +314,7 @@ export default function Lending() {
               top={{ sm: "10%", lg: "80%", xl: "80%" }}
             >
               <Img
-                w={{ sm: "40px", lg: "9px", xl: "90px" }}
+                w={{ sm: "40px", lg: "60px", xl: "90px" }}
                 src={mediumcross.src}
               />
             </Flex>
@@ -891,7 +891,7 @@ export default function Lending() {
               right={0}
             >
               <Img
-                w={{ sm: "100px", lg: "200px", xl: "400px" }}
+                w={{ sm: "100px", lg: "220px", xl: "320px" }}
                 src={holographic3d.src}
               />
             </Flex>
@@ -1282,14 +1282,14 @@ export default function Lending() {
             )}
             <Flex
               position={"absolute"}
-              top={{ sm: "25%", smd: "24%", lg: "70%", xl: "72%" }}
+              top={{ sm: "25%", smd: "24%", lg: "76%", xl: "72%" }}
             >
               <Img
                 w={{
                   sm: "80px",
                   smd: "80px",
                   md: "400px",
-                  lg: "460px",
+                  lg: "380px",
                   xl: "460px",
                 }}
                 src={
@@ -1299,7 +1299,7 @@ export default function Lending() {
             </Flex>
 
             <Flex
-              pt={{ sm: "80px", lg: "500px", xl: "240px" }}
+              pt={{ sm: "80px", lg: "240px", xl: "240px" }}
               justifyContent='center'
               gap={6}
               flexDirection={{
@@ -1311,12 +1311,12 @@ export default function Lending() {
             >
               <Flex
                 flexDirection={"column"}
-                color='#2D2F50'
+                color='#F5F5F5'
                 alignItems={"center"}
               >
                 <Text
                   textAlign={"center"}
-                  fontSize={{ sm: "50px", lg: "100px", xl: "100px" }}
+                  fontSize={{ sm: "50px", lg: "80px", xl: "100px" }}
                   lineHeight={"0.8"}
                   fontFamily='grotesk'
                 >
@@ -1455,7 +1455,7 @@ export default function Lending() {
                   backgroundRepeat='repeat'
                   backgroundPosition={"center"}
                   h={{ sm: "170px", lg: "380px", xl: "390px" }}
-                  w={{ sm: "320px", lg: "300px", xl: "280px" }}
+                  w={{ sm: "320px", lg: "260px", xl: "280px" }}
                   flexDirection={{ sm: "row", lg: "column", xl: "column" }}
                   alignItems={{
                     sm: "center",
@@ -1601,7 +1601,7 @@ export default function Lending() {
             </Flex>
             <Flex
               position={"absolute"}
-              top={{ sm: "98%", smd: "98%", lg: "95%", xl: "95%" }}
+              top={{ sm: "98%", smd: "98%", lg: "97%", xl: "96%" }}
             >
               <Img w='2400px' src={holographicdivider.src} />
             </Flex>
@@ -1616,9 +1616,9 @@ export default function Lending() {
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
             zIndex={1}
-            height={{ sm: "1000px", smd: "800px", lg: "1690px", xl: "1690px" }}
+            height={{ sm: "1000px", smd: "800px", lg: "1500px", xl: "1640px" }}
             w='100%'
-            mt={{ sm: -48, lg: -48, xl: -48 }}
+            mt={{ sm: -48, lg: -48, xl: -74 }}
             flexDirection='column'
             position={"relative"}
           >
@@ -1956,7 +1956,7 @@ export default function Lending() {
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
             // zIndex={1}
-            height={{ sm: "1000px", smd: "1000px", lg: "1200px", xl: "1200px" }}
+            height={{ sm: "1000px", smd: "1000px", lg: "1200px", xl: "1300px" }}
             w='100%'
             mt={-72}
             flexDirection='column'

@@ -21,19 +21,10 @@ export default function Navbar() {
             fontFamily={"manropebd"}
             fontSize={{ lg: "18px", xl: "22px" }}
           >
-            <Link href='/daov2'>
-              <Text>Governance</Text>
-            </Link>
-            <Link href='/lsd'>
-              <Text>LSD</Text>
-            </Link>
-            <Link href='/lending'>
-              <Text>Lending</Text>
-            </Link>
-
-            <Link href='/yieldv2'>
-              <Text>Yield</Text>
-            </Link>
+            <Text>Governance</Text>
+            <Text>Documentation</Text>
+            <Text>Lending</Text>
+            <Text>Yield</Text>
             <Button borderRadius={"18px"} bgColor={"rgba(45, 47, 80, 1)"}>
               Launch App
             </Button>
