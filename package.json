@@ -28,14 +28,17 @@
     "nextra-theme-docs": "^2.9.0",
     "pocketbase": "^0.16.0",
     "react": "18.2.0",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "18.2.0",
     "react-fast-marquee": "^1.6.0",
     "react-icons": "^4.8.0",
     "react-pie-menu": "^0.3.3",
+    "react-scrollbars-custom": "^4.1.1",
     "styled-components": "^6.0.0-rc.1",
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/react-custom-scrollbars": "^4.0.11",
     "@types/react-pie-menu": "^1.0.0"
   }
 }

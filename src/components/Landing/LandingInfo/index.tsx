@@ -12,6 +12,29 @@ import { useEffect, useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { ScaleFade } from "@chakra-ui/react";
 
+export function MobileCardComponent({ mt, cardInfo }: any) {
+  return (
+    <Flex
+      minW='300px'
+      flexDirection={"column"}
+      border='2px solid black'
+      borderRadius={"30px"}
+      h='330px'
+      // mt={mt}
+      p={6}
+      gap={4}
+    >
+      <Img src={cardInfo.img.src} />
+
+      {cardInfo.title}
+
+      {cardInfo.subText}
+    </Flex>
+
+    // {/* </ScaleFade> */}
+  );
+}
+
 export function CardComponent({ mt, cardInfo }: any) {
   const ref = useRef<HTMLDivElement>(null);
   //   const { scrollYProgress } = useScroll({
@@ -51,19 +74,16 @@ export function CardComponent({ mt, cardInfo }: any) {
         flexDirection={"column"}
         border='2px solid black'
         borderRadius={"30px"}
-        minH='450px'
+        minH='500px'
         // mt={mt}
         p={6}
+        gap={6}
       >
         <Img src={cardInfo.img.src} />
-        <Text my={4} fontFamily={"manrope"} fontSize='36px'>
-          {cardInfo.title}
-        </Text>
-        <Text fontSize={"24px"} fontFamily='manrope'>
-          {cardInfo.subText}
-          {/* Access permissionless liquidity across multiple blockchains for your
-          fund, startup, real estate or other financial needs */}
-        </Text>
+
+        {cardInfo.title}
+
+        {cardInfo.subText}
       </Flex>
     </motion.div>
     // {/* </ScaleFade> */}

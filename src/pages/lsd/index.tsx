@@ -32,7 +32,8 @@ import Footer from "@/components/NewFooter";
 
 import { useEffect, useMemo, useState, useRef } from "react";
 import { pb } from "@/utils/auth";
-
+import axios from "axios";
+import WhyCard from "@/components/Lsd/WhyCard";
 // import fs from "fs";
 
 export default function LSD() {
@@ -1430,7 +1431,7 @@ export default function LSD() {
                   overflowX='hidden'
                   ref={scrollContainerRef}
                 >
-                  <Flex
+                  {/* <Flex
                     borderRadius={"20px"}
                     border='1.33px solid #FCFCFC'
                     minW={{
@@ -1485,9 +1486,41 @@ export default function LSD() {
                       for quick conversions and transactions whenever you
                       desire.
                     </Text>
-                  </Flex>
+                  </Flex> */}
 
-                  <Flex
+                  <WhyCard
+                    title='Instant Liquidity'
+                    text=' Our liquid staking solution ensures that while your assets
+                      are locked in, they remain at your fingertips, allowing
+                      for quick conversions and transactions whenever you
+                      desire.'
+                  />
+
+                  <WhyCard
+                    title='Optimized Returns'
+                    text=' Our state-of-the-art algorithms and partnerships are
+                    designed to scan the market and ensure that you always get
+                    the best returns. This ensures that every penny invested
+                    with Multichainz is always hard at work, maximizing your
+                    profits.'
+                  />
+
+                  <WhyCard
+                    title='Multi-Chain Exploration'
+                    text='Our platform offers seamless integration and compatibility
+                    with multiple chains, granting you the freedom to explore,
+                    transact, and maximize benefits across diverse networks.'
+                  />
+
+                  <WhyCard
+                    title='Enhanced Security and Transparency'
+                    text=' Our robust security mechanisms ensure that your assets are
+                    always protected, while the transparent operations let you
+                    monitor and track every movement, giving you complete
+                    control and assurance.'
+                  />
+
+                  {/* <Flex
                     borderRadius={"20px"}
                     border='1.33px solid #FCFCFC'
                     minW={{
@@ -1544,9 +1577,9 @@ export default function LSD() {
                       with Multichainz is always hard at work, maximizing your
                       profits.
                     </Text>
-                  </Flex>
+                  </Flex> */}
 
-                  <Flex
+                  {/* <Flex
                     borderRadius={"20px"}
                     border='1.33px solid #FCFCFC'
                     minW={{
@@ -1601,9 +1634,9 @@ export default function LSD() {
                       with multiple chains, granting you the freedom to explore,
                       transact, and maximize benefits across diverse networks.
                     </Text>
-                  </Flex>
+                  </Flex> */}
 
-                  <Flex
+                  {/* <Flex
                     borderRadius={"20px"}
                     border='1.33px solid #FCFCFC'
                     minW={{
@@ -1659,7 +1692,7 @@ export default function LSD() {
                       monitor and track every movement, giving you complete
                       control and assurance.
                     </Text>
-                  </Flex>
+                  </Flex> */}
                 </Flex>
 
                 <Flex

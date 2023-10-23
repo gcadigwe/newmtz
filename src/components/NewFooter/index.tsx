@@ -23,7 +23,7 @@ export default function Footer({ lsd }: { lsd?: boolean }) {
       h={
         lsd
           ? { smd: "680px", md: "700px", lg: "740px", xl: "740px" }
-          : { smd: "680px", md: "700px", lg: "740px", xl: "740px" }
+          : { smd: "680px", md: "640px", lg: "660px", xl: "680px" }
       }
       //   alignItems={"center"}
       px={{ sm: 10, smd: 16, md: 20, lg: 40, xl: 40 }}
@@ -33,7 +33,7 @@ export default function Footer({ lsd }: { lsd?: boolean }) {
       //   justifyContent='center'
     >
       <Flex
-        mt={isMobileDevice ? 28 : 60}
+        mt={isMobileDevice ? 28 : lsd ? 60 : 32}
         flexDirection={isMobileDevice ? "column" : "row"}
         gap={isMobileDevice ? 6 : undefined}
       >
@@ -246,6 +246,7 @@ export default function Footer({ lsd }: { lsd?: boolean }) {
         justifyContent={isMobileDevice ? "center" : "flex-end"}
         gap={10}
         mr={8}
+        pb={20}
       >
         <Icon
           cursor={"pointer"}
@@ -272,7 +273,7 @@ export default function Footer({ lsd }: { lsd?: boolean }) {
       <Flex
         justifyContent={"center"}
         fontSize={isMobileDevice ? "14px" : "18px"}
-        mt={20}
+        // pt={20}
         pb={isMobileDevice ? 10 : undefined}
       >
         <Text>© 2023 MultiChainz. all Right Reserved </Text>

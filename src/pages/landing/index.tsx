@@ -1,5 +1,5 @@
 import Navbar from "@/components/Landing/Navbar";
-import { Box, Button, Flex, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Img, Text, useMediaQuery } from "@chakra-ui/react";
 import Head from "next/head";
 import bigcross from "../../assets/3d/landing/bigcross.webp";
 import mediumcross from "../../assets/3d/landing/mediumcross.webp";
@@ -8,6 +8,7 @@ import sphereholograph from "../../assets/3d/landing/sphereholograph.webp";
 import springholograph from "../../assets/3d/landing/springholograph.webp";
 import Marquee from "react-fast-marquee";
 import coinpic from "../../assets/coinspic.png";
+import { Scrollbars } from "react-custom-scrollbars";
 
 import handcoinpic from "../../assets/handcoinpic.png";
 
@@ -23,7 +24,9 @@ import holographic3d from "../../assets/3d/landing/holographic3d.png";
 import holographiccircle from "../../assets/3d/landing/holographiccircle.png";
 import holographicstring from "../../assets/3d/landing/holographicstring.png";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
-import LendingInfo from "@/components/Landing/LandingInfo";
+import LendingInfo, {
+  MobileCardComponent,
+} from "@/components/Landing/LandingInfo";
 import nftliquidityimage from "../../assets/nftliquidityimage.png";
 import collateralimage from "../../assets/collateralimage.png";
 import empowerimage from "../../assets/empowerimage.png";
@@ -39,8 +42,21 @@ import treasurybalancegraph from "../../assets/treasurybalancegraph.png";
 import ecosystempartners from "../../assets/ecosystempartners.png";
 import partners from "../../assets/partners.png";
 import Footer from "@/components/NewFooter";
+import mobilespringholograph from "../../assets/3d/landing/mobilespringholograph.png";
+import ChainsCard from "@/components/Landing/ChainsCard";
+import halflandingcircle from "../../assets/3d/landing/halflandingcircle.png";
+import halflandingsphere from "../../assets/3d/landing/halflandingsphere.png";
+import EnableCard from "@/components/Landing/EnableCard";
+import busdlogo from "../../assets/busdlogo.png";
+import usdclogo from "../../assets/usdclogo.png";
+import chainzlogo from "../../assets/chainzlogo.png";
+import usdtlogo from "../../assets/usdtlogo.png";
+import shadow from "../../assets/shadow.svg";
+import { useRef, useState } from "react";
+import "./style.module.css";
 
 export default function Lending() {
+  const [isMobileDevice] = useMediaQuery("(max-width: 559px)");
   const nftLendingInfo = {
     title: (
       <Text
@@ -54,7 +70,12 @@ export default function Lending() {
       </Text>
     ),
     subText: (
-      <Text mt={4} fontFamily={"manrope"} fontSize='24px' lineHeight={"1.3"}>
+      <Text
+        mt={4}
+        fontFamily={"manrope"}
+        fontSize={{ sm: "20px", lg: "24px", xl: "24px" }}
+        lineHeight={"1.3"}
+      >
         Unlocking new horizons,
         <br /> Multichainz empowers NFT lending <br /> with custom tools,
         benefiting both <br /> borrowers and lenders.
@@ -64,12 +85,18 @@ export default function Lending() {
       {
         img: nftliquidityimage,
         title: (
-          <Text fontFamily={"manrope"} fontSize='32px'>
+          <Text
+            fontFamily={"manrope"}
+            fontSize={{ sm: "24px", lg: "32px", xl: "32px" }}
+          >
             NFT Lending
           </Text>
         ),
         subText: (
-          <Text fontSize={"18px"} fontFamily='manrope'>
+          <Text
+            fontSize={{ sm: "14px", lg: "18px", xl: "18px" }}
+            fontFamily='manrope'
+          >
             Access permissionless liquidity across multiple blockchains for your
             fund, startup, real estate or other financial needs
           </Text>
@@ -78,12 +105,18 @@ export default function Lending() {
       {
         img: collateralimage,
         title: (
-          <Text fontFamily={"manrope"} fontSize='32px'>
+          <Text
+            fontFamily={"manrope"}
+            fontSize={{ sm: "24px", lg: "32px", xl: "32px" }}
+          >
             Collateral Boost
           </Text>
         ),
         subText: (
-          <Text fontSize={"18px"} fontFamily='manrope'>
+          <Text
+            fontSize={{ sm: "14px", lg: "18px", xl: "18px" }}
+            fontFamily='manrope'
+          >
             Lend any tokenized asset to verified counter-parties to support
             their real-life causes and initiatives
           </Text>
@@ -92,12 +125,18 @@ export default function Lending() {
       {
         img: empowerimage,
         title: (
-          <Text fontFamily={"manrope"} fontSize='32px'>
+          <Text
+            fontFamily={"manrope"}
+            fontSize={{ sm: "24px", lg: "32px", xl: "32px" }}
+          >
             NFT Empower
           </Text>
         ),
         subText: (
-          <Text fontSize={"18px"} fontFamily='manrope'>
+          <Text
+            fontSize={{ sm: "14px", lg: "18px", xl: "18px" }}
+            fontFamily='manrope'
+          >
             Borrow or lend liquid tokenized assets with institutional- grade
             security to meet your company financial needs and goals
           </Text>
@@ -128,12 +167,18 @@ export default function Lending() {
       {
         img: borrowersimage,
         title: (
-          <Text fontFamily={"manrope"} fontSize='32px'>
+          <Text
+            fontFamily={"manrope"}
+            fontSize={{ sm: "24px", lg: "32px", xl: "32px" }}
+          >
             For Borrowers
           </Text>
         ),
         subText: (
-          <Text fontSize={"18px"} fontFamily='manrope'>
+          <Text
+            fontSize={{ sm: "14px", lg: "18px", xl: "18px" }}
+            fontFamily='manrope'
+          >
             Access permissionless liquidity across multiple blockchains for your
             fund, startup, real estate or other financial needs
           </Text>
@@ -142,12 +187,18 @@ export default function Lending() {
       {
         img: lendersimage,
         title: (
-          <Text fontFamily={"manrope"} fontSize='32px'>
+          <Text
+            fontFamily={"manrope"}
+            fontSize={{ sm: "24px", lg: "32px", xl: "32px" }}
+          >
             For Lenders
           </Text>
         ),
         subText: (
-          <Text fontSize={"18px"} fontFamily='manrope'>
+          <Text
+            fontSize={{ sm: "14px", lg: "18px", xl: "18px" }}
+            fontFamily='manrope'
+          >
             Lend any tokenized asset to verified counter-parties to support
             their real-life causes and initiatives
           </Text>
@@ -156,18 +207,55 @@ export default function Lending() {
       {
         img: institutionsimage,
         title: (
-          <Text fontFamily={"manrope"} fontSize='32px'>
+          <Text
+            fontFamily={"manrope"}
+            fontSize={{ sm: "24px", lg: "32px", xl: "32px" }}
+          >
             NFT Empower
           </Text>
         ),
         subText: (
-          <Text fontSize={"18px"} fontFamily='manrope'>
+          <Text
+            fontSize={{ sm: "14px", lg: "18px", xl: "18px" }}
+            fontFamily='manrope'
+          >
             Borrow or lend liquid tokenized assets with institutional- grade
             security to meet your company financial needs and goals
           </Text>
         ),
       },
     ],
+  };
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  const scrollToLeft = () => {
+    if (scrollContainerRef.current) {
+      const newScrollOffset = Math.max(scrollOffset - 240, 0);
+      setScrollOffset(newScrollOffset);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollOffset,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Function to scroll to the right of the container
+  const scrollToRight = () => {
+    if (scrollContainerRef.current) {
+      const newScrollOffset = Math.min(
+        scrollOffset + 240,
+        scrollContainerRef.current.scrollWidth -
+          scrollContainerRef.current.clientWidth
+      );
+      setScrollOffset(newScrollOffset);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollOffset,
+        behavior: "smooth",
+      });
+    }
   };
   return (
     <>
@@ -178,19 +266,19 @@ export default function Lending() {
         <link rel='icon' href='/icon.ico' />
       </Head>
       <Box>
-        <Flex
-          position={"relative"}
-          border='1px solid red'
-          flexDirection={"column"}
-        >
+        <Flex position={"relative"} flexDirection={"column"}>
           <Flex
             w='100%'
-            background={'url("../../hero.png")'}
+            background={
+              isMobileDevice
+                ? 'url("../../landing/landingheromobilebg.webp")'
+                : 'url("../../hero.png")'
+            }
             backgroundSize={"cover"}
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
             flexDirection='column'
-            height={{ lg: "1100px", xl: "1400px" }}
+            height={{ sm: "720px", lg: "1100px", xl: "1400px" }}
             // position={"absolute"}
             position={"relative"}
             zIndex={4}
@@ -202,57 +290,107 @@ export default function Lending() {
               right={2}
               top={{ lg: "10%", xl: "10%" }}
             >
-              <Img w={{ lg: "340px", xl: "380px" }} src={sphereholograph.src} />
-            </Flex>
-
-            <Flex position={"absolute"} right={20} top={"45%"}>
-              <Img src={bigcross.src} />
-            </Flex>
-
-            <Flex position={"absolute"} left={"30%"} top={"80%"}>
-              <Img src={mediumcross.src} />
-            </Flex>
-
-            <Flex position={"absolute"} left={"10%"} top={"10%"}>
-              <Img src={smallcross.src} />
-            </Flex>
-
-            <Flex position={"absolute"} left={0} top={60}>
-              <Img w={{ lg: "380px", xl: "580px" }} src={springholograph.src} />
+              <Img
+                display={{ sm: "none", md: "block", lg: "block", xl: "block" }}
+                w={{ lg: "340px", xl: "380px" }}
+                src={sphereholograph.src}
+              />
             </Flex>
 
             <Flex
-              pt={{ lg: 20, xl: 28 }}
+              position={"absolute"}
+              right={{ sm: 18, lg: 20, xl: 20 }}
+              top={{ sm: "60%", lg: "45%", xl: "45%" }}
+            >
+              <Img
+                w={{ sm: "90px", lg: "160px", xl: "160px" }}
+                src={bigcross.src}
+              />
+            </Flex>
+
+            <Flex
+              position={"absolute"}
+              left={{ sm: "10%", lg: "30%", xl: "30%" }}
+              top={{ sm: "10%", lg: "80%", xl: "80%" }}
+            >
+              <Img
+                w={{ sm: "40px", lg: "9px", xl: "90px" }}
+                src={mediumcross.src}
+              />
+            </Flex>
+
+            <Flex
+              position={"absolute"}
+              left={{ sm: "70%", lg: "10%", xl: "10%" }}
+              top={"10%"}
+            >
+              <Img src={smallcross.src} />
+            </Flex>
+
+            <Flex
+              position={"absolute"}
+              left={0}
+              top={{ sm: 80, lg: 40, xl: 40 }}
+            >
+              <Img
+                w={{ sm: "180px", lg: "500px", xl: "700px" }}
+                src={
+                  isMobileDevice
+                    ? mobilespringholograph.src
+                    : springholograph.src
+                }
+              />
+            </Flex>
+
+            <Flex
+              pt={{ sm: 20, lg: 20, xl: 28 }}
               flexDirection={"column"}
               alignItems='center'
             >
               <Text
                 color='white'
                 fontFamily={"grotesk"}
-                fontSize={{ lg: "100px", xl: "140px" }}
+                fontSize={{ sm: "50px", lg: "100px", xl: "140px" }}
                 textAlign={"center"}
                 lineHeight='1'
               >
                 MULTICHAINZ <br /> PROTOCOL
               </Text>
-              <Text
-                color='white'
-                textAlign={"center"}
-                fontFamily={"manrope"}
-                fontWeight={"400"}
-                fontSize={{ lg: "28px", xl: "36px" }}
-                lineHeight={"1.2"}
-                py={10}
-              >
-                Lend, borrow, and stake cryptocurrencies,
-                <br /> NFTs, and tokenized real-world assets across <br />{" "}
-                multiple blockchain networks
-              </Text>
+              {isMobileDevice ? (
+                <Text
+                  color='white'
+                  textAlign={"center"}
+                  fontFamily={"manrope"}
+                  fontWeight={"400"}
+                  fontSize={{ sm: "20px", lg: "28px", xl: "36px" }}
+                  lineHeight={"1.2"}
+                  py={10}
+                >
+                  Lend, borrow, and stake <br /> cryptocurrencies, NFTs, and{" "}
+                  <br /> tokenized real-world assets across <br /> multiple
+                  blockchain networks
+                </Text>
+              ) : (
+                <Text
+                  color='white'
+                  textAlign={"center"}
+                  fontFamily={"manrope"}
+                  fontWeight={"400"}
+                  fontSize={{ sm: "20px", lg: "28px", xl: "36px" }}
+                  lineHeight={"1.2"}
+                  py={10}
+                >
+                  Lend, borrow, and stake cryptocurrencies,
+                  <br /> NFTs, and tokenized real-world assets across <br />{" "}
+                  multiple blockchain networks
+                </Text>
+              )}
               <Button
+                fontFamily={"manropebd"}
                 color='rgba(91, 71, 239, 1)'
-                fontSize={{ lg: "24px", xl: "28px" }}
-                w={{ lg: "160px", xl: "200px" }}
-                h={{ lg: "62px", xl: "70px" }}
+                fontSize={{ sm: "14px", lg: "24px", xl: "24px" }}
+                w={{ sm: "125px", lg: "160px", xl: "200px" }}
+                h={{ sm: "50px", lg: "62px", xl: "70px" }}
                 borderRadius={"44px"}
               >
                 Get started
@@ -261,13 +399,13 @@ export default function Lending() {
 
             <Marquee>
               <Text
-                mt={{ lg: 20, xl: 40 }}
-                fontSize={{ lg: "100px", xl: "120px" }}
+                mt={{ sm: 20, lg: 20, xl: 40 }}
+                fontSize={{ sm: "38px", lg: "100px", xl: "120px" }}
                 color='white'
               >
                 {" "}
                 NFT/RWA Lending | Cross-chain infrastructure | Institutional
-                Compliance DAO Governance |{" "}
+                Compliance DAO Governance |{"   "}
               </Text>
             </Marquee>
             {/* <Flex>
@@ -281,10 +419,9 @@ export default function Lending() {
             backgroundSize={"cover"}
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
-            height={{ lg: "900px", xl: "1200px" }}
-            border='1px solid blue'
+            height={{ sm: "700px", lg: "900px", xl: "1200px" }}
             w='100%'
-            mt={-60}
+            mt={isMobileDevice ? -20 : -60}
             // mt={"1170px"}
             zIndex={1}
           >
@@ -292,58 +429,108 @@ export default function Lending() {
               flexDirection={"column"}
               w='100%'
               pt={20}
-              justifyContent='center'
+              justifyContent={{
+                sm: "unset",
+                smd: "unset",
+                lg: "center",
+                xl: "center",
+              }}
             >
               <Text
                 textAlign={"center"}
                 fontFamily='grotesklight'
-                fontSize={{ lg: "40px", xl: "60px" }}
+                fontSize={{ sm: "20px", lg: "40px", xl: "60px" }}
                 lineHeight='1'
                 color='rgba(245, 245, 245, 1)'
               >
                 $20m locked in collateral <br /> to back the loans
               </Text>
 
-              <Flex justifyContent={"center"} mt={10}>
+              <Flex
+                alignItems={{
+                  sm: "center",
+                  smd: "center",
+                  lg: "unset",
+                  xl: "unset",
+                }}
+                justifyContent={"center"}
+                mt={10}
+                flexDirection={{
+                  sm: "column",
+                  smd: "column",
+                  lg: "row",
+                  xl: "row",
+                }}
+                gap={{ sm: 2, smd: 2, lg: 0, xl: 0 }}
+              >
                 <Flex
-                  mr={2}
+                  mr={{ sm: 0, smd: 0, lg: 2, xl: 2 }}
                   background={'url("../../coinpicbg.png")'}
                   backgroundSize={"cover"}
                   backgroundRepeat='repeat'
                   backgroundPosition={"center"}
-                  h={{ lg: "408px", xl: "468px" }}
-                  w={{ lg: "320px", xl: "400px" }}
+                  h={{ sm: "130px", lg: "408px", xl: "468px" }}
+                  w={{ sm: "320px", lg: "320px", xl: "400px" }}
                   borderRadius={"12px"}
                   position='relative'
                   justifyContent={"center"}
                 >
-                  <Flex position={"absolute"} top={-5} flexDirection='column'>
-                    <Img w={{ lg: "220px", xl: "260px" }} src={coinpic.src} />
+                  <Flex
+                    position={"absolute"}
+                    top={-5}
+                    flexDirection={{
+                      sm: "row",
+                      smd: "row",
+                      lg: "column",
+                      xl: "column",
+                    }}
+                    alignItems={{
+                      sm: "center",
+                      smd: "center",
+                      lg: "unset",
+                      xl: "unset",
+                    }}
+                    gap={{ sm: 4, smd: 4, lg: 0, xl: 0 }}
+                  >
+                    <Img
+                      w={{ sm: "104px", lg: "220px", xl: "260px" }}
+                      src={coinpic.src}
+                    />
 
-                    <Text
-                      mt={6}
-                      color='white'
-                      textAlign={"center"}
-                      fontSize={"40px"}
-                      fontFamily='grotesklight'
+                    <Flex
+                      flexDirection={{
+                        sm: "column",
+                        smd: "column",
+                        md: "column",
+                        lg: "column",
+                        xl: "column",
+                      }}
                     >
-                      $5 Million+
-                    </Text>
-                    <Text
-                      textAlign={"center"}
-                      color='white'
-                      fontSize={"20px"}
-                      fontFamily='grotesklight'
-                    >
-                      Processed Loans
-                    </Text>
+                      <Text
+                        mt={6}
+                        color='white'
+                        textAlign={"center"}
+                        fontSize={{ sm: "32px", lg: "40px", xl: "40px" }}
+                        fontFamily='grotesklight'
+                      >
+                        $5 Million+
+                      </Text>
+                      <Text
+                        textAlign={"center"}
+                        color='white'
+                        fontSize={{ sm: "16px", lg: "20px", xl: "20px" }}
+                        fontFamily='grotesklight'
+                      >
+                        Processed Loans
+                      </Text>
+                    </Flex>
                   </Flex>
                 </Flex>
                 <Flex flexDirection={"column"}>
                   <Flex
                     borderRadius={"12px"}
-                    h={{ lg: "200px", xl: "230px" }}
-                    w={{ lg: "450px", xl: "560px" }}
+                    h={{ sm: "130px", lg: "200px", xl: "230px" }}
+                    w={{ sm: "320px", lg: "450px", xl: "560px" }}
                     background={'url("../../handpicbg.png")'}
                     backgroundSize={"cover"}
                     backgroundRepeat='repeat'
@@ -357,7 +544,7 @@ export default function Lending() {
                       w='100%'
                     >
                       <Img
-                        w={{ lg: "160px", xl: "180px" }}
+                        w={{ sm: "104px", lg: "160px", xl: "180px" }}
                         src={handcoinpic.src}
                       />
                       <Flex flexDirection={"column"}>
@@ -383,7 +570,8 @@ export default function Lending() {
                   <Flex
                     borderRadius={"12px"}
                     mt='8px'
-                    h={{ lg: "200px", xl: "230px" }}
+                    h={{ sm: "130px", lg: "200px", xl: "230px" }}
+                    w={{ sm: "320px", lg: "unset", xl: "unset" }}
                     background={'url("../../globepicbg.png")'}
                     backgroundSize={"cover"}
                     backgroundRepeat='repeat'
@@ -394,11 +582,11 @@ export default function Lending() {
                       position={"absolute"}
                       alignItems='center'
                       justifyContent={"space-evenly"}
-                      w='100%'
-                      h='100%'
+                      w={{ sm: "100%", lg: "100%", xl: "100%" }}
+                      h={{ sm: "100%", lg: "100%", xl: "100%" }}
                     >
                       <Img
-                        w={{ lg: "180px", xl: "200px" }}
+                        w={{ sm: "104px", lg: "180px", xl: "200px" }}
                         src={globepic.src}
                       />
                       <Flex flexDirection={"column"}>
@@ -427,21 +615,42 @@ export default function Lending() {
           </Flex>
           {/* Explore Session */}
           <Flex
-            background={'url("../../explorehero.png")'}
+            background={
+              isMobileDevice
+                ? 'url("../../landing/exploremobilebg.webp")'
+                : 'url("../../explorehero.png")'
+            }
             backgroundSize={"cover"}
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
-            height='1170px'
+            height={{ sm: "900px", lg: "1170px", xl: "1170px" }}
             w='100%'
             mt={-24}
             // mt={"2480px"}
             zIndex={4}
             position='relative'
           >
-            <Flex alignItems={"center"} justifyContent='center' w='100%'>
+            <Flex
+              alignItems={"center"}
+              justifyContent={{
+                sm: "center",
+                smd: "center",
+                md: "space-evenly",
+                lg: "space-evenly",
+                xl: "space-evenly",
+              }}
+              w='100%'
+              flexDirection={{
+                sm: "column",
+                smd: "column",
+                md: "row",
+                lg: "row",
+                xl: "row",
+              }}
+            >
               <Flex flexDirection={"column"} alignItems='center' mr={10}>
                 <Text
-                  fontSize={{ lg: "80px", xl: "100px" }}
+                  fontSize={{ sm: "50px", lg: "80px", xl: "100px" }}
                   lineHeight='1'
                   textAlign={"center"}
                   fontFamily={"grotesk"}
@@ -450,18 +659,19 @@ export default function Lending() {
                 </Text>
                 <Flex alignItems={"center"} mt={6}>
                   <Button
-                    fontFamily={"manrope"}
-                    h='60px'
-                    w='160px'
+                    fontFamily={"manropebd"}
+                    h={{ sm: "40px", lg: "60px", xl: "60px" }}
+                    w={{ sm: "100px", lg: "160px", xl: "160px" }}
                     borderRadius={"50px"}
                     mr={4}
+                    fontSize={{ sm: "11px", lg: "16px", xl: "16px" }}
                   >
                     Get started
                   </Button>
                   <Text
                     lineHeight={"1.2"}
                     fontFamily={"manrope"}
-                    fontSize='32px'
+                    fontSize={{ sm: "16px", lg: "32px", xl: "32px" }}
                   >
                     Community Pools
                     <br />
@@ -470,9 +680,21 @@ export default function Lending() {
                 </Flex>
               </Flex>
 
-              <Flex flexDirection={"column"}>
-                <Flex>
-                  <Flex
+              <Flex
+                flexDirection={"column"}
+                mt={{ sm: 6, smd: 6, lg: 0, xl: 0 }}
+              >
+                <Flex gap={{ sm: 4, smd: 4, lg: 0, xl: 0 }}>
+                  <ChainsCard
+                    img={ethereum.src}
+                    text='Access 450k+ tokens through the largest chain for dApps'
+                  />
+
+                  <ChainsCard
+                    img={arbitrum.src}
+                    text='Access speed and security in your loan transactions.'
+                  />
+                  {/* <Flex
                     borderRadius={"30px"}
                     mr={4}
                     w='350px'
@@ -521,10 +743,20 @@ export default function Lending() {
                         Learn more
                       </Text>
                     </Flex>
-                  </Flex>
+                  </Flex> */}
                 </Flex>
-                <Flex mt={4}>
-                  <Flex
+                <Flex mt={4} gap={{ sm: 4, smd: 4, lg: 0, xl: 0 }}>
+                  <ChainsCard
+                    img={binance.src}
+                    text='Lend your assets in a cheaper and faster way through this
+                      leading chain'
+                  />
+                  <ChainsCard
+                    img={polygon.src}
+                    text='Unlock lower fees and higher scalability with this scaling
+                      technology'
+                  />
+                  {/* <Flex
                     mr={4}
                     borderRadius={"30px"}
                     w='350px'
@@ -578,10 +810,18 @@ export default function Lending() {
                         Learn more
                       </Text>
                     </Flex>
-                  </Flex>
+                  </Flex> */}
                 </Flex>
-                <Flex mt={4}>
-                  <Flex
+                <Flex mt={4} gap={{ sm: 4, smd: 4, lg: 0, xl: 0 }}>
+                  <ChainsCard
+                    img={avalanche.src}
+                    text='Enjoy efficiency and security robustness in your loans'
+                  />
+                  <ChainsCard
+                    img={optimism.src}
+                    text='Lend and borrow with the fastest and cheapest L2 benefits'
+                  />
+                  {/* <Flex
                     borderRadius={"30px"}
                     w='350px'
                     h='240px'
@@ -633,17 +873,27 @@ export default function Lending() {
                         Learn more
                       </Text>
                     </Flex>
-                  </Flex>
+                  </Flex> */}
                 </Flex>
               </Flex>
             </Flex>
 
-            <Flex position={"absolute"} bottom={-40}>
-              <Img w='240px' src={holographicstring.src} />
+            <Flex position={"absolute"} bottom={{ sm: -20, lg: -40, xl: -40 }}>
+              <Img
+                w={{ sm: "100px", lg: "240px", xl: "240px" }}
+                src={holographicstring.src}
+              />
             </Flex>
 
-            <Flex position={"absolute"} bottom={{ lg: 0, xl: -28 }} right={0}>
-              <Img w={{ lg: "200px", xl: "400px" }} src={holographic3d.src} />
+            <Flex
+              position={"absolute"}
+              bottom={{ sm: 0, lg: 0, xl: -28 }}
+              right={0}
+            >
+              <Img
+                w={{ sm: "100px", lg: "200px", xl: "400px" }}
+                src={holographic3d.src}
+              />
             </Flex>
           </Flex>
 
@@ -654,10 +904,9 @@ export default function Lending() {
             backgroundSize={"cover"}
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
-            height='1470px'
-            border='1px solid blue'
+            height={{ sm: "960px", smd: "1000px", lg: "1470px", xl: "1470px" }}
             w='100%'
-            mt={-64}
+            mt={{ sm: -48, lg: -64, xl: -64 }}
             // mt={"3400px"}
             zIndex={3}
           >
@@ -666,11 +915,27 @@ export default function Lending() {
               //   justifyContent='flex-start'
               //   pl={60}
               w='100%'
+              flexDirection={{
+                sm: "column",
+                smd: "column",
+                lg: "row",
+                xl: "row",
+              }}
             >
-              <Flex border='1px solid blue' w='60%' justifyContent={"center"}>
+              <Flex
+                pt={{ sm: 60, smd: 60, lg: 20, xl: 0 }}
+                w={{ sm: "100%", lg: "50%", xl: "50%" }}
+                justifyContent={{
+                  sm: "center",
+                  smd: "center",
+                  lg: "flex-end",
+                  xl: "flex-end",
+                }}
+                pr={{ sm: 0, smd: 0, lg: 28, xl: 32 }}
+              >
                 <Flex flexDirection={"column"} alignItems='center'>
                   <Text
-                    fontSize={{ lg: "80px", xl: "100px" }}
+                    fontSize={{ sm: "50px", lg: "80px", xl: "100px" }}
                     lineHeight='1'
                     textAlign={"center"}
                     fontFamily={"grotesk"}
@@ -680,18 +945,19 @@ export default function Lending() {
                   </Text>
                   <Flex alignItems={"center"} mt={6}>
                     <Button
-                      fontFamily={"manrope"}
-                      h='60px'
-                      w='160px'
+                      fontFamily={"manropebd"}
+                      h={{ sm: "40px", lg: "60px", xl: "60px" }}
+                      w={{ sm: "100px", lg: "160px", xl: "160px" }}
                       borderRadius={"50px"}
                       mr={4}
+                      fontSize={{ sm: "11px", lg: "16px", xl: "16px" }}
                     >
                       Get started
                     </Button>
                     <Text
                       lineHeight={"1.2"}
                       fontFamily={"manrope"}
-                      fontSize='32px'
+                      fontSize={{ sm: "16px", lg: "32px", xl: "32px" }}
                       color='white'
                     >
                       Institutional features to <br /> enhance on-chain lending{" "}
@@ -702,8 +968,23 @@ export default function Lending() {
               </Flex>
               {/* todo: manrope light */}
 
-              <Flex w='40%' flexDirection={"column"}>
-                <Flex mb={8} pr={10} justifyContent={"flex-end"}>
+              <Flex
+                pt={{ sm: 10, smd: 10, lg: 0, xl: 0 }}
+                w={{ sm: "100%", smd: "100%", md: "60%", lg: "50%", xl: "50%" }}
+                flexDirection={"column"}
+              >
+                <Flex
+                  mb={8}
+                  pr={10}
+                  display={{
+                    sm: "none",
+                    smd: "none",
+                    md: "flex",
+                    lg: "flex",
+                    xl: "flex",
+                  }}
+                  justifyContent={"flex-end"}
+                >
                   <Flex
                     cursor={"pointer"}
                     bgColor={"#F5F5F5"}
@@ -713,6 +994,7 @@ export default function Lending() {
                     onClick={() => {
                       // setcontrolClicked(true);
                       // handleScrollBack();
+                      scrollToLeft();
                     }}
                   >
                     <ChevronLeftIcon />
@@ -726,27 +1008,47 @@ export default function Lending() {
                     onClick={() => {
                       // setcontrolClicked(true);
                       // handleScrollForward();
+                      scrollToRight();
                     }}
                   >
                     <ChevronRightIcon />
                   </Flex>
                 </Flex>
-                <Flex overflowX='scroll'>
-                  <Flex
-                    minW='379px'
-                    h='327px'
+                <Flex
+                  ref={scrollContainerRef}
+                  overflowX='hidden'
+                  gap={{ sm: 6, smd: 6, md: 0, lg: 6, xl: 6 }}
+                  pl={{ sm: 10, smd: 10, md: 0, lg: 0, xl: 0 }}
+                >
+                  {/* <Flex
+                    minW={{ sm: "260px", lg: "379px", xl: "379px" }}
+                    h={{ sm: "220px", lg: "327px", xl: "327px" }}
                     background={'url("../../landing/enablingsection1.png")'}
                     backgroundSize={"cover"}
                     backgroundRepeat='repeat'
-                    backgroundPosition={"center"}
+                    backgroundPosition={{
+                      sm: "bottom",
+                      smd: "bottom",
+                      md: "center",
+                      lg: "center",
+                      xl: "center",
+                    }}
+                    borderRadius='18px'
+                    borderTop={{
+                      sm: "0.68px solid #FCFCFC",
+                      smd: "0.68px solid #FCFCFC",
+                      md: "unset",
+                      lg: "unset",
+                      xl: "unset",
+                    }}
                   >
                     <Flex
                       flexDirection={"column"}
-                      px={12}
+                      px={{ sm: 6, smd: 8, lg: 12, xl: 12 }}
                       justifyContent='space-evenly'
                     >
                       <Text
-                        fontSize={"18px"}
+                        fontSize={{ sm: "14px", lg: "18px", xl: "18px" }}
                         fontFamily='manrope'
                         color='white'
                       >
@@ -755,12 +1057,23 @@ export default function Lending() {
                       </Text>
 
                       <Flex color='white' alignItems={"center"}>
-                        <Text fontFamily={"manrope"}>Read more</Text>
+                        <Text
+                          fontFamily={"manrope"}
+                          fontSize={{
+                            sm: "12px",
+                            smd: "12px",
+                            md: "16px",
+                            lg: "16px",
+                            xl: "16px",
+                          }}
+                        >
+                          Read more
+                        </Text>
                         <ChevronRightIcon />
                       </Flex>
                     </Flex>
-                  </Flex>
-                  <Flex
+                  </Flex> */}
+                  {/* <Flex
                     minW='379px'
                     h='327px'
                     background={'url("../../landing/enablingsection2.png")'}
@@ -788,8 +1101,20 @@ export default function Lending() {
                         <ChevronRightIcon />
                       </Flex>
                     </Flex>
-                  </Flex>
-                  <Flex
+                  </Flex> */}
+                  <EnableCard
+                    title='Comprehensive Compliance'
+                    text='The most comprehensive compliance process to eliminate counterparty risk through a mix of on-chain and third-party verification solutions.'
+                  />
+                  <EnableCard
+                    title='24/7 Secure Custody'
+                    text='The lending solution that ensures never-ending guaranteed safety for all the protocol locked assets thanks to our institutional-grade asset guardians.'
+                  />
+                  <EnableCard
+                    title='Unmatched Transparency'
+                    text='Open access and always accessible proof of reserves and protocol funds for all assets from any pool of any blockchain. '
+                  />
+                  {/* <Flex
                     minW='379px'
                     h='327px'
                     background={'url("../../lending/enablingsection3.png")'}
@@ -816,6 +1141,47 @@ export default function Lending() {
                         <ChevronRightIcon />
                       </Flex>
                     </Flex>
+                  </Flex> */}
+                </Flex>
+
+                <Flex
+                  mt={8}
+                  display={{
+                    sm: "flex",
+                    smd: "flex",
+                    md: "none",
+                    lg: "none",
+                    xl: "none",
+                  }}
+                  justifyContent={"center"}
+                >
+                  <Flex
+                    cursor={"pointer"}
+                    bgColor={"#F5F5F5"}
+                    p={2}
+                    borderRadius='6px'
+                    mr={4}
+                    onClick={() => {
+                      // setcontrolClicked(true);
+                      // handleScrollBack();
+                      scrollToLeft();
+                    }}
+                  >
+                    <ChevronLeftIcon />
+                  </Flex>
+
+                  <Flex
+                    cursor={"pointer"}
+                    bgColor={"#F5F5F5"}
+                    p={2}
+                    borderRadius='6px'
+                    onClick={() => {
+                      // setcontrolClicked(true);
+                      // handleScrollForward();
+                      scrollToRight();
+                    }}
+                  >
+                    <ChevronRightIcon />
                   </Flex>
                 </Flex>
               </Flex>
@@ -826,228 +1192,771 @@ export default function Lending() {
             backgroundSize={"cover"}
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
-            height='4400px'
+            height={{
+              sm: "2400px",
+              smd: "1000px",
+              md: "4000px",
+              lg: "4400px",
+              xl: "4400px",
+            }}
             w='100%'
-            mt={-48}
+            mt={{ sm: -40, lg: -48, xl: -48 }}
             flexDirection='column'
             position={"relative"}
             zIndex={2}
           >
-            <LendingInfo sectionInfo={nftLendingInfo} />
-            <LendingInfo sectionInfo={rwaInfo} />
-            <Flex position={"absolute"} top='70%'>
-              <Img w='540px' src={holographiccircle.src} />
+            {isMobileDevice ? (
+              <>
+                <Flex py={28} flexDirection={"column"}>
+                  <Flex flexDirection={"column"}>
+                    <Text
+                      fontSize={"50px"}
+                      fontFamily='grotesk'
+                      textAlign={"center"}
+                      lineHeight={"0.9"}
+                    >
+                      NFT <br /> Lending
+                    </Text>
+
+                    <Text
+                      fontFamily={"manrope"}
+                      fontSize='16px'
+                      textAlign={"center"}
+                      py={6}
+                    >
+                      Unlocking new horizons, Multichainz <br /> empowers NFT
+                      lending with custom tools, <br /> benefiting both
+                      borrowers and lenders.
+                    </Text>
+
+                    <Flex
+                      // className={styles.thumHorizontal}
+                      // overflow={"scroll"}
+                      ml={10}
+                      gap={4}
+                    >
+                      <Scrollbars height={380}>
+                        <Flex>
+                          {nftLendingInfo?.cards.map((card: any, idx: any) => (
+                            <MobileCardComponent key={idx} cardInfo={card} />
+                          ))}
+                        </Flex>
+                      </Scrollbars>
+                    </Flex>
+                  </Flex>
+
+                  <Flex pt={20} flexDirection={"column"}>
+                    <Text
+                      fontSize={"50px"}
+                      fontFamily='grotesk'
+                      textAlign={"center"}
+                      lineHeight={"0.9"}
+                    >
+                      Real-World <br /> Asset Lending
+                    </Text>
+
+                    <Text
+                      fontFamily={"manrope"}
+                      fontSize='16px'
+                      textAlign={"center"}
+                      py={6}
+                    >
+                      Multichainz will expand the on-chain RWA <br /> lending
+                      potential through tailored <br /> merchanisms for
+                      borrowers and lenders
+                    </Text>
+
+                    <Flex overflow={"scroll"} ml={10} gap={4}>
+                      {rwaInfo?.cards.map((card: any, idx: any) => (
+                        <MobileCardComponent key={idx} cardInfo={card} />
+                      ))}
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </>
+            ) : (
+              <>
+                <LendingInfo sectionInfo={nftLendingInfo} />
+                <LendingInfo sectionInfo={rwaInfo} />
+              </>
+            )}
+            <Flex
+              position={"absolute"}
+              top={{ sm: "25%", smd: "24%", lg: "70%", xl: "72%" }}
+            >
+              <Img
+                w={{
+                  sm: "80px",
+                  smd: "80px",
+                  md: "400px",
+                  lg: "460px",
+                  xl: "460px",
+                }}
+                src={
+                  isMobileDevice ? halflandingcircle.src : holographiccircle.src
+                }
+              />
             </Flex>
 
-            <Flex pt={"500px"} justifyContent='center' gap={6}>
+            <Flex
+              pt={{ sm: "80px", lg: "500px", xl: "240px" }}
+              justifyContent='center'
+              gap={6}
+              flexDirection={{
+                sm: "column",
+                smd: "column",
+                lg: "row",
+                xl: "row",
+              }}
+            >
               <Flex
                 flexDirection={"column"}
-                color='white'
+                color='#2D2F50'
                 alignItems={"center"}
               >
                 <Text
                   textAlign={"center"}
-                  fontSize='100px'
+                  fontSize={{ sm: "50px", lg: "100px", xl: "100px" }}
                   lineHeight={"0.8"}
                   fontFamily='grotesk'
                 >
                   Community <br /> Led DAO
                 </Text>
-                <Text my={8} fontFamily={"manrope"} fontSize='24px'>
-                  Propose protocol suggestions and <br /> improvements within
-                  seconds <br />
-                  through our community forum.
-                </Text>
+                {isMobileDevice ? (
+                  <Text
+                    my={8}
+                    fontFamily={"manrope"}
+                    fontSize={{ lg: "20px", xl: "24px" }}
+                    textAlign='center'
+                  >
+                    Propose protocol suggestions and <br /> improvements within
+                    seconds through our <br /> community forum.
+                  </Text>
+                ) : (
+                  <Text
+                    my={8}
+                    fontFamily={"manrope"}
+                    fontSize={{ lg: "20px", xl: "24px" }}
+                  >
+                    Propose protocol suggestions and <br /> improvements within
+                    seconds <br />
+                    through our community forum.
+                  </Text>
+                )}
                 <Button
                   color='black'
                   bgColor={"rgba(245, 245, 245, 1)"}
-                  fontSize='manrope'
-                  py={8}
+                  fontFamily='manropebd'
+                  py={{ sm: 6, lg: 8, xl: 8 }}
                   borderRadius='32px'
+                  fontSize={{
+                    sm: "12px",
+                    smd: "12px",
+                    lg: "16px",
+                    xl: "16px",
+                  }}
                 >
                   Governance Forum
                 </Button>
               </Flex>
 
-              <Flex gap={4}>
+              <Flex
+                gap={4}
+                flexDirection={{
+                  sm: "column",
+                  smd: "column",
+                  lg: "row",
+                  xl: "row",
+                }}
+                alignItems={{
+                  sm: "center",
+                  smd: "center",
+                  lg: "unset",
+                  xl: "unset",
+                }}
+              >
                 <Flex
                   background={'url("../../engagebg.png")'}
                   backgroundSize={"cover"}
                   backgroundRepeat='repeat'
                   backgroundPosition={"center"}
-                  h='420px'
-                  w='300px'
-                  flexDirection={"column"}
+                  h={{ sm: "170px", lg: "380px", xl: "390px" }}
+                  w={{ sm: "320px", lg: "260px", xl: "280px" }}
+                  flexDirection={{ sm: "row", lg: "column", xl: "column" }}
+                  alignItems={{
+                    sm: "center",
+                    smd: "center",
+                    lg: "center",
+                    xl: "center",
+                  }}
                   color='white'
                   gap={4}
                   p={6}
+                  px={{ sm: 4, smd: 2, lg: 6, xl: 6 }}
+                  borderRadius={{
+                    sm: "14px",
+                    smd: "14px",
+                    lg: "20px",
+                    xl: "20px",
+                  }}
                 >
-                  <Img src={engagehand.src} />
-                  <Text fontSize={"32px"} fontFamily='manrope'>
-                    Engage
-                  </Text>
-                  <Text fontSize={"18px"} fontFamily='manrope'>
-                    Learn more about initiatives proposed by community members
-                  </Text>
+                  <Img
+                    w={{
+                      sm: "120px",
+                      smd: "120px",
+                      md: "200px",
+                      lg: "220px",
+                      xl: "240px",
+                    }}
+                    h={{
+                      sm: "104px",
+                      smd: "104px",
+                      md: "160px",
+                      lg: "180px",
+                      xl: "200px",
+                    }}
+                    src={engagehand.src}
+                  />
+                  <Flex
+                    flexDirection={{
+                      sm: "column",
+                      smd: "column",
+                      lg: "column",
+                      xl: "column",
+                    }}
+                    alignItems={{
+                      sm: "center",
+                      smd: "center",
+                      lg: "flex-start",
+                      xl: "flex-start",
+                    }}
+                    gap={{ sm: 2, smd: 2, lg: 0, xl: 4 }}
+                  >
+                    <Text fontSize={"32px"} fontFamily='manrope'>
+                      Engage
+                    </Text>
+                    <Text
+                      fontSize={{ sm: "14px", lg: "15px", xl: "15px" }}
+                      fontFamily='manrope'
+                      textAlign={{
+                        sm: "center",
+                        smd: "center",
+                        lg: "unset",
+                        xl: "unset",
+                      }}
+                    >
+                      Learn more about initiatives proposed by community members
+                    </Text>
+                  </Flex>
                 </Flex>
                 <Flex
                   background={'url("../../proposebg.png")'}
                   backgroundSize={"cover"}
                   backgroundRepeat='repeat'
                   backgroundPosition={"center"}
-                  h='420px'
-                  w='300px'
-                  flexDirection={"column"}
+                  h={{ sm: "170px", lg: "380px", xl: "390px" }}
+                  w={{ sm: "320px", lg: "300px", xl: "280px" }}
+                  flexDirection={{ sm: "row", lg: "column", xl: "column" }}
+                  alignItems={{
+                    sm: "center",
+                    smd: "center",
+                    lg: "center",
+                    xl: "center",
+                  }}
                   color='white'
                   gap={4}
                   p={6}
+                  px={{ sm: 4, smd: 2, lg: 6, xl: 6 }}
+                  borderRadius={{
+                    sm: "14px",
+                    smd: "14px",
+                    lg: "14px",
+                    xl: "20px",
+                  }}
                 >
-                  <Img src={proposehand.src} />
-                  <Text fontSize={"32px"} fontFamily='manrope'>
-                    Propose
-                  </Text>
-                  <Text fontSize={"18px"} fontFamily='manrope'>
-                    Share your suggestions or improvements for the protocol
-                  </Text>
+                  <Img
+                    w={{
+                      sm: "120px",
+                      smd: "120px",
+                      md: "200px",
+                      lg: "220px",
+                      xl: "240px",
+                    }}
+                    h={{
+                      sm: "104px",
+                      smd: "104px",
+                      md: "160px",
+                      lg: "180px",
+                      xl: "200px",
+                    }}
+                    src={proposehand.src}
+                  />
+                  <Flex
+                    flexDirection={{
+                      sm: "column",
+                      smd: "column",
+                      lg: "column",
+                      xl: "column",
+                    }}
+                    alignItems={{
+                      sm: "center",
+                      smd: "center",
+                      lg: "flex-start",
+                      xl: "flex-start",
+                    }}
+                    gap={{ sm: 2, smd: 2, lg: 4, xl: 4 }}
+                  >
+                    <Text fontSize={"32px"} fontFamily='manrope'>
+                      Propose
+                    </Text>
+                    <Text
+                      fontSize={{ sm: "14px", lg: "15px", xl: "15px" }}
+                      fontFamily='manrope'
+                      textAlign={{
+                        sm: "center",
+                        smd: "center",
+                        lg: "unset",
+                        xl: "unset",
+                      }}
+                    >
+                      Share your suggestions or improvements for the protocol
+                    </Text>
+                  </Flex>
                 </Flex>
                 <Flex
                   background={'url("../../votebg.png")'}
                   backgroundSize={"cover"}
                   backgroundRepeat='repeat'
                   backgroundPosition={"center"}
-                  h='420px'
-                  w='300px'
-                  flexDirection={"column"}
+                  h={{ sm: "170px", lg: "380px", xl: "390px" }}
+                  w={{ sm: "320px", lg: "260px", xl: "280px" }}
+                  flexDirection={{ sm: "row", lg: "column", xl: "column" }}
+                  alignItems={{
+                    sm: "center",
+                    smd: "center",
+                    lg: "center",
+                    xl: "center",
+                  }}
                   color='white'
                   gap={4}
                   p={6}
+                  px={{ sm: 4, smd: 2, lg: 6, xl: 6 }}
+                  borderRadius={{
+                    sm: "14px",
+                    smd: "14px",
+                    lg: "20px",
+                    xl: "20px",
+                  }}
                 >
-                  <Img src={votehand.src} />
-                  <Text fontSize={"32px"} fontFamily='manrope'>
-                    Vote
-                  </Text>
-                  <Text fontSize={"18px"} fontFamily='manrope'>
-                    Support proposals that you agree with
-                  </Text>
+                  <Img
+                    w={{
+                      sm: "120px",
+                      smd: "120px",
+                      md: "200px",
+                      lg: "220px",
+                      xl: "240px",
+                    }}
+                    h={{
+                      sm: "104px",
+                      smd: "104px",
+                      md: "160px",
+                      lg: "180px",
+                      xl: "200px",
+                    }}
+                    src={votehand.src}
+                  />
+                  <Flex
+                    flexDirection={{
+                      sm: "column",
+                      smd: "column",
+                      lg: "column",
+                      xl: "column",
+                    }}
+                    alignItems={{
+                      sm: "center",
+                      smd: "center",
+                      lg: "flex-start",
+                      xl: "flex-start",
+                    }}
+                    gap={{ sm: 2, smd: 2, lg: 0, xl: 4 }}
+                  >
+                    <Text fontSize={"32px"} fontFamily='manrope'>
+                      Vote
+                    </Text>
+                    <Text
+                      fontSize={{ sm: "14px", lg: "15px", xl: "15px" }}
+                      fontFamily='manrope'
+                      textAlign={{
+                        sm: "center",
+                        smd: "center",
+                        lg: "unset",
+                        xl: "unset",
+                      }}
+                    >
+                      Support proposals that you agree with
+                    </Text>
+                  </Flex>
                 </Flex>
               </Flex>
             </Flex>
-            <Flex position={"absolute"} top='95%'>
+            <Flex
+              position={"absolute"}
+              top={{ sm: "98%", smd: "98%", lg: "95%", xl: "95%" }}
+            >
               <Img w='2400px' src={holographicdivider.src} />
             </Flex>
           </Flex>
           <Flex
-            background={'url("../../treasurybalancehero.png")'}
+            background={
+              isMobileDevice
+                ? 'url("../../landing/treasurybalancemobilebg.webp")'
+                : 'url("../../treasurybalancehero.png")'
+            }
             backgroundSize={"cover"}
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
             zIndex={1}
-            height='1690px'
+            height={{ sm: "1000px", smd: "800px", lg: "1690px", xl: "1690px" }}
             w='100%'
-            mt={-48}
+            mt={{ sm: -48, lg: -48, xl: -48 }}
             flexDirection='column'
             position={"relative"}
           >
-            <Flex alignItems={"center"} h='100%' justifyContent='space-evenly'>
-              <Flex position={"relative"}>
+            <Flex
+              alignItems={"center"}
+              h='100%'
+              justifyContent={{
+                sm: "center",
+                smd: "center",
+                lg: "space-evenly",
+                xl: "space-evenly",
+              }}
+              flexDirection={{
+                sm: "column-reverse",
+                smd: "column-reverse",
+                lg: "row",
+                xl: "row",
+              }}
+            >
+              <Flex
+                position={"relative"}
+                mt={{ sm: 10, smd: 10, lg: 0, xl: 0 }}
+              >
                 <Img
                   src={treasurybalancegraph.src}
                   w={{ lg: "700px", xl: "800px" }}
                 />
-                <Flex
-                  w={{ lg: "280px", xl: "320px" }}
-                  h={{ lg: "280px", xl: "320px" }}
-                  position={"absolute"}
-                  top='30%'
-                  // left={10}
-                  right={"30%"}
-                  background={'url("../../bigtreasurybalancecircle.png")'}
-                  backgroundSize={"cover"}
-                  backgroundRepeat='repeat'
-                  backgroundPosition={"center"}
-                ></Flex>
 
                 <Flex
-                  w='200px'
-                  h='200px'
                   position={"absolute"}
-                  top={{ lg: 4, xl: 6 }}
-                  // top='30%'
-                  // left={10}
-                  right={{ lg: 24, xl: 28 }}
+                  filter='blur(4px)'
+                  top={{ sm: "30%", lg: "30%", xl: "30%" }}
+                  right={{ sm: "28%", lg: "28%", xl: "28%" }}
+                >
+                  <Flex
+                    borderRadius={"50%"}
+                    opacity={0.2}
+                    bg='black'
+                    w={{ sm: "160px", lg: "280px", xl: "320px" }}
+                    h={{ sm: "160px", lg: "280px", xl: "320px" }}
+                  ></Flex>
+                </Flex>
+                <Flex
+                  w={{ sm: "160px", lg: "280px", xl: "320px" }}
+                  h={{ sm: "160px", lg: "280px", xl: "320px" }}
+                  position={"absolute"}
+                  top={{ sm: "30%", lg: "30%", xl: "30%" }}
+                  right={{ sm: "30%", lg: "30%", xl: "30%" }}
                   background={'url("../../bigtreasurybalancecircle.png")'}
                   backgroundSize={"cover"}
                   backgroundRepeat='repeat'
                   backgroundPosition={"center"}
-                ></Flex>
+                  justifyContent='center'
+                  alignItems={"center"}
+                >
+                  <Flex flexDirection={"column"} alignItems='center'>
+                    <Text
+                      fontFamily={"manrope"}
+                      fontSize={{
+                        sm: "24px",
+                        smd: "24px",
+                        lg: "50px",
+                        xl: "56px",
+                      }}
+                      color='#F5F5F5'
+                    >
+                      $600K
+                    </Text>
+                    <Text
+                      fontFamily={"manrope"}
+                      fontSize={{
+                        sm: "12px",
+                        smd: "12px",
+                        lg: "24px",
+                        xl: "28px",
+                      }}
+                      color='#F5F5F5'
+                      textAlign={"center"}
+                    >
+                      Total Ecosystem <br /> Reserve
+                    </Text>
+                  </Flex>
+                </Flex>
 
                 <Flex
-                  w='200px'
-                  h='200px'
                   position={"absolute"}
-                  top={{ lg: 28, xl: 32 }}
-                  left={{ lg: 26, xl: 30 }}
+                  filter='blur(4px)'
+                  top={{ sm: 4, lg: 4, xl: 6 }}
+                  right={{ sm: "58px", lg: "85px", xl: "105px" }}
+                >
+                  <Flex
+                    borderRadius={"50%"}
+                    opacity={0.2}
+                    bg='black'
+                    w={{ sm: "78px", lg: "200px", xl: "200px" }}
+                    h={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  ></Flex>
+                </Flex>
+                <Flex
+                  w={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  h={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  position={"absolute"}
+                  top={{ sm: 4, lg: 4, xl: 6 }}
+                  right={{ sm: 16, lg: 24, xl: 28 }}
                   background={'url("../../bigtreasurybalancecircle.png")'}
                   backgroundSize={"cover"}
                   backgroundRepeat='repeat'
                   backgroundPosition={"center"}
-                ></Flex>
+                  alignItems='center'
+                  justifyContent={"center"}
+                >
+                  <Flex flexDirection={"column"} alignItems='center'>
+                    <Img
+                      w={{ sm: "20px", smd: "20px", lg: "50px", xl: "50px" }}
+                      src={busdlogo.src}
+                    />
+                    <Text
+                      fontFamily={"manropebd"}
+                      fontSize={{ sm: "12px", lg: "20px", xl: "22px" }}
+                      color='#F5F5F5'
+                    >
+                      BUSD
+                    </Text>
+                    <Text
+                      fontFamily={"manrope"}
+                      fontSize={{ sm: "12px", lg: "20px", xl: "22px" }}
+                      color='#F5F5F5'
+                    >
+                      $150k
+                    </Text>
+                  </Flex>
+                </Flex>
 
                 <Flex
-                  w='200px'
-                  h='200px'
                   position={"absolute"}
-                  bottom={{ lg: 4, xl: 6 }}
-                  left={{ lg: 24, xl: 28 }}
-                  background={'url("../../bigtreasurybalancecircle.png")'}
-                  backgroundSize={"cover"}
-                  backgroundRepeat='repeat'
-                  backgroundPosition={"center"}
-                ></Flex>
+                  filter='blur(4px)'
+                  top={{ sm: 16, lg: 28, xl: 32 }}
+                  left={{ sm: 8, lg: 10, xl: 10 }}
+                >
+                  <Flex
+                    borderRadius={"50%"}
+                    opacity={0.2}
+                    bg='black'
+                    w={{ sm: "78px", lg: "200px", xl: "200px" }}
+                    h={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  ></Flex>
+                </Flex>
                 <Flex
-                  w='200px'
-                  h='200px'
+                  w={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  h={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  // border='1px solid red'
                   position={"absolute"}
-                  bottom={{ lg: 32, xl: 40 }}
-                  right={{ lg: 4, xl: 6 }}
+                  borderRadius='50%'
+                  top={{ sm: 16, lg: 28, xl: 32 }}
+                  left={{ sm: 22, lg: 26, xl: 30 }}
                   background={'url("../../bigtreasurybalancecircle.png")'}
                   backgroundSize={"cover"}
                   backgroundRepeat='repeat'
                   backgroundPosition={"center"}
-                ></Flex>
+                  justifyContent='center'
+                  alignItems={"center"}
+                >
+                  <Flex flexDirection={"column"} alignItems='center'>
+                    <Img
+                      w={{ sm: "20px", smd: "20px", lg: "50px", xl: "50px" }}
+                      src={usdclogo.src}
+                    />
+                    <Text
+                      fontFamily={"manropebd"}
+                      fontSize={{ sm: "12px", lg: "20px", xl: "22px" }}
+                      color='#F5F5F5'
+                    >
+                      USDC
+                    </Text>
+                    <Text
+                      fontFamily={"manrope"}
+                      fontSize={{ sm: "12px", lg: "20px", xl: "22px" }}
+                      color='#F5F5F5'
+                    >
+                      $150k
+                    </Text>
+                  </Flex>
+                </Flex>
+
+                <Flex
+                  position={"absolute"}
+                  filter='blur(4px)'
+                  bottom={{ sm: 4, lg: 4, xl: 6 }}
+                  left={{ sm: "70px", lg: 28, xl: 32 }}
+                >
+                  <Flex
+                    borderRadius={"50%"}
+                    opacity={0.2}
+                    bg='black'
+                    w={{ sm: "78px", lg: "200px", xl: "200px" }}
+                    h={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  ></Flex>
+                </Flex>
+                <Flex
+                  w={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  h={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  position={"absolute"}
+                  bottom={{ sm: 4, lg: 4, xl: 6 }}
+                  left={{ sm: 16, lg: 24, xl: 28 }}
+                  background={'url("../../bigtreasurybalancecircle.png")'}
+                  backgroundSize={"cover"}
+                  backgroundRepeat='repeat'
+                  backgroundPosition={"center"}
+                  justifyContent='center'
+                  alignItems={"center"}
+                >
+                  <Flex flexDirection={"column"} alignItems='center'>
+                    <Img
+                      w={{ sm: "20px", smd: "20px", lg: "50px", xl: "50px" }}
+                      src={chainzlogo.src}
+                    />
+                    <Text
+                      fontFamily={"manropebd"}
+                      fontSize={{ sm: "12px", lg: "20px", xl: "22px" }}
+                      color='#F5F5F5'
+                    >
+                      CHAINZ
+                    </Text>
+                    <Text
+                      fontFamily={"manrope"}
+                      fontSize={{ sm: "12px", lg: "20px", xl: "22px" }}
+                      color='#F5F5F5'
+                    >
+                      $150k
+                    </Text>
+                  </Flex>
+                </Flex>
+
+                <Flex
+                  position={"absolute"}
+                  filter='blur(4px)'
+                  bottom={{ sm: 20, lg: 32, xl: 40 }}
+                  right={{ sm: 2, lg: 2, xl: 4 }}
+                >
+                  <Flex
+                    borderRadius={"50%"}
+                    opacity={0.2}
+                    bg='black'
+                    w={{ sm: "78px", lg: "200px", xl: "200px" }}
+                    h={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  ></Flex>
+                </Flex>
+                <Flex
+                  w={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  h={{ sm: "78px", lg: "200px", xl: "200px" }}
+                  position={"absolute"}
+                  bottom={{ sm: 20, lg: 32, xl: 40 }}
+                  right={{ sm: 4, lg: 4, xl: 6 }}
+                  background={'url("../../bigtreasurybalancecircle.png")'}
+                  backgroundSize={"cover"}
+                  backgroundRepeat='repeat'
+                  backgroundPosition={"center"}
+                  justifyContent='center'
+                  alignItems={"center"}
+                >
+                  <Flex flexDirection={"column"} alignItems='center'>
+                    <Img
+                      w={{ sm: "20px", smd: "20px", lg: "50px", xl: "50px" }}
+                      src={usdtlogo.src}
+                    />
+                    <Text
+                      fontFamily={"manropebd"}
+                      fontSize={{ sm: "12px", lg: "20px", xl: "22px" }}
+                      color='#F5F5F5'
+                    >
+                      USDT
+                    </Text>
+                    <Text
+                      fontFamily={"manrope"}
+                      fontSize={{ sm: "12px", lg: "20px", xl: "22px" }}
+                      color='#F5F5F5'
+                    >
+                      $150k
+                    </Text>
+                  </Flex>
+                </Flex>
               </Flex>
 
-              <Flex flexDirection={"column"}>
+              <Flex flexDirection={"column"} pt={{ sm: 32 }}>
                 <Text
+                  textAlign={{
+                    sm: "center",
+                    smd: "center",
+                    lg: "unset",
+                    xl: "unset",
+                  }}
                   color='white'
                   fontFamily={"grotesk"}
-                  fontSize='100px'
+                  fontSize={{ sm: "50px", lg: "100px", xl: "100px" }}
                   lineHeight={"0.8"}
                 >
                   Treasury
                   <br />
                   Balance
                 </Text>
-                <Text
-                  mt={6}
-                  color='white'
-                  fontFamily={"manrope"}
-                  fontSize='24px'
-                >
-                  Multichainz has a robust <br /> ecosystem treasury reserve{" "}
-                  <br /> composed by foundation tokens <br /> and protocol fees
-                  and interests.
-                </Text>
+                {isMobileDevice ? (
+                  <Text
+                    mt={6}
+                    color='white'
+                    fontFamily={"manrope"}
+                    fontSize={{ sm: "16px", lg: "24px", xl: "24px" }}
+                    textAlign='center'
+                  >
+                    Multichainz has a robust ecosystem <br /> treasury reserve{" "}
+                    composed by foundation <br /> tokens and protocol fees and
+                    interests.
+                  </Text>
+                ) : (
+                  <Text
+                    mt={6}
+                    color='white'
+                    fontFamily={"manrope"}
+                    fontSize={{ sm: "16px", lg: "24px", xl: "24px" }}
+                  >
+                    Multichainz has a robust <br /> ecosystem treasury reserve{" "}
+                    <br /> composed by foundation tokens <br /> and protocol
+                    fees and interests.
+                  </Text>
+                )}
               </Flex>
             </Flex>
           </Flex>
           <Flex
-            background={'url("../../ecosystempartnerhero.png")'}
+            background={
+              isMobileDevice
+                ? 'url("../../landing/ecosystempartnersmobilebg.webp")'
+                : 'url("../../ecosystempartnerhero.png")'
+            }
             backgroundSize={"cover"}
             backgroundRepeat='repeat'
             backgroundPosition={"center"}
             // zIndex={1}
-            height='1200px'
+            height={{ sm: "1000px", smd: "1000px", lg: "1200px", xl: "1200px" }}
             w='100%'
             mt={-72}
             flexDirection='column'
@@ -1055,14 +1964,34 @@ export default function Lending() {
           >
             <Flex
               h='100%'
-              pt={40}
+              pt={{ sm: 60, smd: 10, lg: 40, xl: 40 }}
               alignItems={"center"}
-              justifyContent='space-around'
+              justifyContent={{
+                sm: "center",
+                smd: "center",
+                md: "space-around",
+                lg: "space-around",
+                xl: "space-around",
+              }}
+              gap={{ sm: 10, smd: 20, md: 0, lg: 0, xl: 0 }}
+              flexDirection={{
+                sm: "column",
+                smd: "column",
+                md: "row",
+                lg: "row",
+                xl: "row",
+              }}
             >
               <Flex flexDirection={"column"}>
                 <Text
                   textAlign={"center"}
-                  fontSize='100px'
+                  fontSize={{
+                    sm: "50px",
+                    smd: "50px",
+                    md: "80px",
+                    lg: "100px",
+                    xl: "100px",
+                  }}
                   fontFamily={"grotesk"}
                   lineHeight='0.8'
                   mb={8}
@@ -1070,7 +1999,10 @@ export default function Lending() {
                   Ecosystem <br /> Integration <br /> Partners
                 </Text>
                 <Flex justifyContent={"center"}>
-                  <Img w='450px' src={partners.src} />
+                  <Img
+                    w={{ sm: "250px", smd: "250px", lg: "450px", xl: "450px" }}
+                    src={partners.src}
+                  />
                 </Flex>
               </Flex>
 
@@ -1078,22 +2010,33 @@ export default function Lending() {
                 <Flex>
                   <Flex
                     borderRadius={"40px"}
-                    fontSize={"18px"}
-                    fontFamily='manrope'
+                    fontSize={{
+                      sm: "14px",
+                      smd: "14px",
+                      md: "16px",
+                      lg: "18px",
+                      xl: "18px",
+                    }}
+                    fontFamily='manropebd'
                     bgColor={"white"}
                     color='black'
-                    px={14}
-                    py={4}
+                    px={{ sm: 8, smd: 8, md: 12, lg: 14, xl: 14 }}
+                    py={{ sm: 4, smd: 4, md: 4, lg: 4, xl: 4 }}
                   >
                     <Text>Powered by</Text>
                   </Flex>
                 </Flex>
 
-                <Img w='640px' src={ecosystempartners.src} />
+                <Img
+                  w={{ sm: "310px", smd: "320px", lg: "640px", xl: "640px" }}
+                  src={ecosystempartners.src}
+                />
               </Flex>
             </Flex>
           </Flex>
-          <Footer />
+          <Flex mt={{ sm: -20, smd: -20, md: 0, lg: 0, xl: 0 }}>
+            <Footer />
+          </Flex>
         </Flex>
       </Box>
     </>

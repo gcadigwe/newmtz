@@ -1,0 +1,17 @@
+.thumbHorizontal {
+  display: flex;
+}
+
+/* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #eceef2;
+  border-radius: 180px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9b9b9b;
+  border-radius: 180px;
+} */
